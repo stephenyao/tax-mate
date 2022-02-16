@@ -14,21 +14,13 @@
 		DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EC527BD276300FAD85F /* Persistence.swift */; };
 		DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EC727BD276300FAD85F /* tax_mate.xcdatamodeld */; };
 		DDBC5ED327BD276400FAD85F /* tax_mateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */; };
-		DDBC5EDD27BD276400FAD85F /* tax_mateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EDC27BD276400FAD85F /* tax_mateUITests.swift */; };
-		DDBC5EDF27BD276400FAD85F /* tax_mateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EDE27BD276400FAD85F /* tax_mateUITestsLaunchTests.swift */; };
-		DDBC5EED27BD28F100FAD85F /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EEC27BD28F100FAD85F /* Nimble */; };
-		DDBC5EF027BD290D00FAD85F /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EEF27BD290D00FAD85F /* Quick */; };
+		DDBC5EF227BD29E900FAD85F /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EF127BD29E900FAD85F /* QuickTest.swift */; };
+		DDBC5EF527BD2C0F00FAD85F /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EF427BD2C0F00FAD85F /* Quick */; };
+		DDBC5EF727BD2C1600FAD85F /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EF627BD2C1600FAD85F /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DDBC5ECF27BD276400FAD85F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DDBC5EB127BD276200FAD85F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DDBC5EB827BD276200FAD85F;
-			remoteInfo = "tax-mate";
-		};
-		DDBC5ED927BD276400FAD85F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDBC5EB127BD276200FAD85F /* Project object */;
 			proxyType = 1;
@@ -47,9 +39,7 @@
 		DDBC5EC827BD276300FAD85F /* tax_mate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tax_mate.xcdatamodel; sourceTree = "<group>"; };
 		DDBC5ECE27BD276400FAD85F /* tax-mateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tax-mateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateTests.swift; sourceTree = "<group>"; };
-		DDBC5ED827BD276400FAD85F /* tax-mateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tax-mateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDBC5EDC27BD276400FAD85F /* tax_mateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateUITests.swift; sourceTree = "<group>"; };
-		DDBC5EDE27BD276400FAD85F /* tax_mateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDBC5EF127BD29E900FAD85F /* QuickTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBC5EF027BD290D00FAD85F /* Quick in Frameworks */,
-				DDBC5EED27BD28F100FAD85F /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,13 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDBC5ED527BD276400FAD85F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DDBC5EF527BD2C0F00FAD85F /* Quick in Frameworks */,
+				DDBC5EF727BD2C1600FAD85F /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +67,8 @@
 			children = (
 				DDBC5EBB27BD276200FAD85F /* tax-mate */,
 				DDBC5ED127BD276400FAD85F /* tax-mateTests */,
-				DDBC5EDB27BD276400FAD85F /* tax-mateUITests */,
 				DDBC5EBA27BD276200FAD85F /* Products */,
+				DDBC5EF327BD2C0F00FAD85F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +77,6 @@
 			children = (
 				DDBC5EB927BD276200FAD85F /* tax-mate.app */,
 				DDBC5ECE27BD276400FAD85F /* tax-mateTests.xctest */,
-				DDBC5ED827BD276400FAD85F /* tax-mateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,17 +106,16 @@
 			isa = PBXGroup;
 			children = (
 				DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */,
+				DDBC5EF127BD29E900FAD85F /* QuickTest.swift */,
 			);
 			path = "tax-mateTests";
 			sourceTree = "<group>";
 		};
-		DDBC5EDB27BD276400FAD85F /* tax-mateUITests */ = {
+		DDBC5EF327BD2C0F00FAD85F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DDBC5EDC27BD276400FAD85F /* tax_mateUITests.swift */,
-				DDBC5EDE27BD276400FAD85F /* tax_mateUITestsLaunchTests.swift */,
 			);
-			path = "tax-mateUITests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +135,6 @@
 			);
 			name = "tax-mate";
 			packageProductDependencies = (
-				DDBC5EEC27BD28F100FAD85F /* Nimble */,
-				DDBC5EEF27BD290D00FAD85F /* Quick */,
 			);
 			productName = "tax-mate";
 			productReference = DDBC5EB927BD276200FAD85F /* tax-mate.app */;
@@ -175,27 +154,13 @@
 				DDBC5ED027BD276400FAD85F /* PBXTargetDependency */,
 			);
 			name = "tax-mateTests";
+			packageProductDependencies = (
+				DDBC5EF427BD2C0F00FAD85F /* Quick */,
+				DDBC5EF627BD2C1600FAD85F /* Nimble */,
+			);
 			productName = "tax-mateTests";
 			productReference = DDBC5ECE27BD276400FAD85F /* tax-mateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DDBC5ED727BD276400FAD85F /* tax-mateUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDBC5EE827BD276400FAD85F /* Build configuration list for PBXNativeTarget "tax-mateUITests" */;
-			buildPhases = (
-				DDBC5ED427BD276400FAD85F /* Sources */,
-				DDBC5ED527BD276400FAD85F /* Frameworks */,
-				DDBC5ED627BD276400FAD85F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDBC5EDA27BD276400FAD85F /* PBXTargetDependency */,
-			);
-			name = "tax-mateUITests";
-			productName = "tax-mateUITests";
-			productReference = DDBC5ED827BD276400FAD85F /* tax-mateUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -211,10 +176,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					DDBC5ECD27BD276400FAD85F = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = DDBC5EB827BD276200FAD85F;
-					};
-					DDBC5ED727BD276400FAD85F = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = DDBC5EB827BD276200FAD85F;
 					};
@@ -239,7 +200,6 @@
 			targets = (
 				DDBC5EB827BD276200FAD85F /* tax-mate */,
 				DDBC5ECD27BD276400FAD85F /* tax-mateTests */,
-				DDBC5ED727BD276400FAD85F /* tax-mateUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,13 +215,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DDBC5ECC27BD276400FAD85F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDBC5ED627BD276400FAD85F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,15 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5ED327BD276400FAD85F /* tax_mateTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDBC5ED427BD276400FAD85F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDBC5EDF27BD276400FAD85F /* tax_mateUITestsLaunchTests.swift in Sources */,
-				DDBC5EDD27BD276400FAD85F /* tax_mateUITests.swift in Sources */,
+				DDBC5EF227BD29E900FAD85F /* QuickTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,11 +251,6 @@
 			isa = PBXTargetDependency;
 			target = DDBC5EB827BD276200FAD85F /* tax-mate */;
 			targetProxy = DDBC5ECF27BD276400FAD85F /* PBXContainerItemProxy */;
-		};
-		DDBC5EDA27BD276400FAD85F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DDBC5EB827BD276200FAD85F /* tax-mate */;
-			targetProxy = DDBC5ED927BD276400FAD85F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -529,42 +469,6 @@
 			};
 			name = Release;
 		};
-		DDBC5EE927BD276400FAD85F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTHK4B78Z7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silverbear.au.tax-mateUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "tax-mate";
-			};
-			name = Debug;
-		};
-		DDBC5EEA27BD276400FAD85F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTHK4B78Z7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.silverbear.au.tax-mateUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "tax-mate";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -595,15 +499,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDBC5EE827BD276400FAD85F /* Build configuration list for PBXNativeTarget "tax-mateUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDBC5EE927BD276400FAD85F /* Debug */,
-				DDBC5EEA27BD276400FAD85F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -626,15 +521,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DDBC5EEC27BD28F100FAD85F /* Nimble */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */;
-			productName = Nimble;
-		};
-		DDBC5EEF27BD290D00FAD85F /* Quick */ = {
+		DDBC5EF427BD2C0F00FAD85F /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */;
 			productName = Quick;
+		};
+		DDBC5EF627BD2C1600FAD85F /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
 		};
 /* End XCSwiftPackageProductDependency section */
 
