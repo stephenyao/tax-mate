@@ -13,10 +13,11 @@
 		DDBC5EC427BD276300FAD85F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBC5EC327BD276300FAD85F /* Preview Assets.xcassets */; };
 		DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EC527BD276300FAD85F /* Persistence.swift */; };
 		DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EC727BD276300FAD85F /* tax_mate.xcdatamodeld */; };
-		DDBC5ED327BD276400FAD85F /* tax_mateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */; };
-		DDBC5EF227BD29E900FAD85F /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EF127BD29E900FAD85F /* QuickTest.swift */; };
+		DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */; };
 		DDBC5EF527BD2C0F00FAD85F /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EF427BD2C0F00FAD85F /* Quick */; };
 		DDBC5EF727BD2C1600FAD85F /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EF627BD2C1600FAD85F /* Nimble */; };
+		DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EF927BDD9FD00FAD85F /* DeductionsRepository.swift */; };
+		DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,9 @@
 		DDBC5EC527BD276300FAD85F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DDBC5EC827BD276300FAD85F /* tax_mate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tax_mate.xcdatamodel; sourceTree = "<group>"; };
 		DDBC5ECE27BD276400FAD85F /* tax-mateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tax-mateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateTests.swift; sourceTree = "<group>"; };
-		DDBC5EF127BD29E900FAD85F /* QuickTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
+		DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsRepositorySpec.swift; sourceTree = "<group>"; };
+		DDBC5EF927BDD9FD00FAD85F /* DeductionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsRepository.swift; sourceTree = "<group>"; };
+		DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deduction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,8 @@
 		DDBC5EBB27BD276200FAD85F /* tax-mate */ = {
 			isa = PBXGroup;
 			children = (
+				DDBC5EFB27BDDB3900FAD85F /* Model */,
+				DDBC5EF827BDD9E500FAD85F /* Repository */,
 				DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */,
 				DDBC5EBE27BD276200FAD85F /* ContentView.swift */,
 				DDBC5EC027BD276300FAD85F /* Assets.xcassets */,
@@ -105,8 +109,7 @@
 		DDBC5ED127BD276400FAD85F /* tax-mateTests */ = {
 			isa = PBXGroup;
 			children = (
-				DDBC5ED227BD276400FAD85F /* tax_mateTests.swift */,
-				DDBC5EF127BD29E900FAD85F /* QuickTest.swift */,
+				DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */,
 			);
 			path = "tax-mateTests";
 			sourceTree = "<group>";
@@ -116,6 +119,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDBC5EF827BDD9E500FAD85F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5EF927BDD9FD00FAD85F /* DeductionsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DDBC5EFB27BDDB3900FAD85F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
+				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */,
 				DDBC5EBF27BD276200FAD85F /* ContentView.swift in Sources */,
+				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBC5ED327BD276400FAD85F /* tax_mateTests.swift in Sources */,
-				DDBC5EF227BD29E900FAD85F /* QuickTest.swift in Sources */,
+				DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
