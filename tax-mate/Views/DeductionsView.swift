@@ -9,12 +9,19 @@ import SwiftUI
 import CoreData
 
 struct DeductionsView: View {
+    private let repository = DeductionsRepository()
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Text("an item")
+            List {
+                ForEach(repository.fetch(), id: \.identifier) {
+                    Text($0.name)
+                }
             }
+            .listStyle(.plain)
+            .navigationTitle("Deductions")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
