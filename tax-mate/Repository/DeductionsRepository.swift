@@ -22,7 +22,7 @@ final class DeductionsRepository {
 
     func insert(deduction: Deduction) {
         let managedDeduction = ManagedDeduction(context: viewContext)
-        managedDeduction.name = deduction.name
+        managedDeduction.copyAttributes(from: deduction)
         do {
             try persistenceStore.container.viewContext.save()
         } catch (let error) {
@@ -30,4 +30,14 @@ final class DeductionsRepository {
         }
     }
 
+}
+
+private extension ManagedDeduction {
+    func copyAttributes(from deduction: Deduction) {
+        self.name = deduction.name
+        self.cost = deduction.cost
+        self.identifier = deduction.identifier
+        self.date = deduction.date
+        self.image = deduction.image?.pngData()
+    }
 }
