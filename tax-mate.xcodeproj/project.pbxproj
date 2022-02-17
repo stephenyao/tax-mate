@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */; };
-		DDBC5EBF27BD276200FAD85F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBE27BD276200FAD85F /* ContentView.swift */; };
+		DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */; };
 		DDBC5EC127BD276300FAD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBC5EC027BD276300FAD85F /* Assets.xcassets */; };
 		DDBC5EC427BD276300FAD85F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBC5EC327BD276300FAD85F /* Preview Assets.xcassets */; };
 		DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EC527BD276300FAD85F /* Persistence.swift */; };
@@ -18,6 +18,8 @@
 		DDBC5EF727BD2C1600FAD85F /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5EF627BD2C1600FAD85F /* Nimble */; };
 		DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EF927BDD9FD00FAD85F /* DeductionsRepository.swift */; };
 		DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */; };
+		DDBC5F0127BE4D8D00FAD85F /* SeedDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */; };
+		DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5F0327BE4DFE00FAD85F /* Fakery */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,7 @@
 /* Begin PBXFileReference section */
 		DDBC5EB927BD276200FAD85F /* tax-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tax-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateApp.swift; sourceTree = "<group>"; };
-		DDBC5EBE27BD276200FAD85F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsView.swift; sourceTree = "<group>"; };
 		DDBC5EC027BD276300FAD85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBC5EC327BD276300FAD85F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DDBC5EC527BD276300FAD85F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsRepositorySpec.swift; sourceTree = "<group>"; };
 		DDBC5EF927BDD9FD00FAD85F /* DeductionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsRepository.swift; sourceTree = "<group>"; };
 		DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deduction.swift; sourceTree = "<group>"; };
+		DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +144,7 @@
 		DDBC5EFE27BE4D4F00FAD85F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDBC5EBE27BD276200FAD85F /* ContentView.swift */,
+				DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBC5EC527BD276300FAD85F /* Persistence.swift */,
+				DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			);
 			name = "tax-mate";
 			packageProductDependencies = (
+				DDBC5F0327BE4DFE00FAD85F /* Fakery */,
 			);
 			productName = "tax-mate";
 			productReference = DDBC5EB927BD276200FAD85F /* tax-mate.app */;
@@ -228,6 +234,7 @@
 			packageReferences = (
 				DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */,
 				DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */,
+				DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */,
 			);
 			productRefGroup = DDBC5EBA27BD276200FAD85F /* Products */;
 			projectDirPath = "";
@@ -266,7 +273,8 @@
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */,
-				DDBC5EBF27BD276200FAD85F /* ContentView.swift in Sources */,
+				DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */,
+				DDBC5F0127BE4D8D00FAD85F /* SeedDb.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 			);
@@ -554,6 +562,14 @@
 				kind = branch;
 			};
 		};
+		DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Fakery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -566,6 +582,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		DDBC5F0327BE4DFE00FAD85F /* Fakery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */;
+			productName = Fakery;
 		};
 /* End XCSwiftPackageProductDependency section */
 

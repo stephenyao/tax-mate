@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct DeductionsView: View {
     var body: some View {
         NavigationView {
             VStack {
@@ -18,8 +18,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DeductionsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DeductionsView()
     }
 }

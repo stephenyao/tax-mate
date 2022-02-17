@@ -7,11 +7,32 @@
 
 import SwiftUI
 
+final class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        // Create seed data
+#if DEBUG
+        let seeded = UserDefaults.standard.bool(forKey: "seeded")
+        if !seeded {
+            SeedDb.populate()
+            UserDefaults.standard.set(true, forKey: "seeded")
+        }
+#endif
+        
+        return true
+    }
+    
+}
+
 @main
 struct tax_mateApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DeductionsView()
         }
     }
+
 }
