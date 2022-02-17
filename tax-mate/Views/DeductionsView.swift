@@ -10,6 +10,7 @@ import CoreData
 
 struct DeductionsView: View {
     private let repository = DeductionsRepository()
+    @State var showsAddDeductions = false
     
     var body: some View {
         NavigationView {
@@ -20,6 +21,9 @@ struct DeductionsView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Deductions")
+            .navigationBarItems(trailing: PresentModalButton(showNewItem: $showsAddDeductions) {
+                AddDeductionsView()
+            })
         }
         .navigationViewStyle(.stack)
     }
