@@ -33,6 +33,7 @@ final class DeductionsRepository {
     
     func fetch() -> [Deduction] {
         let request = ManagedDeduction.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         do {
             let result = try viewContext.fetch(request)
             return result.map { $0.toPlainObject() }
