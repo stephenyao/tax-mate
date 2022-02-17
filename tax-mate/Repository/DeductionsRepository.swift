@@ -12,9 +12,9 @@ final class DeductionsRepository {
     
     private let persistenceStore: PersistenceController
     
-    private var viewContext: NSManagedObjectContext {
-        persistenceStore.container.viewContext
-    }
+    private lazy var viewContext: NSManagedObjectContext = {
+        persistenceStore.container.newBackgroundContext()        
+    }()
     
     init(persistenceStore: PersistenceController = PersistenceController.shared) {
         self.persistenceStore = persistenceStore
@@ -24,7 +24,7 @@ final class DeductionsRepository {
         let managedDeduction = ManagedDeduction(context: viewContext)
         managedDeduction.copyAttributes(from: deduction)
         do {
-            try persistenceStore.container.viewContext.save()
+            try viewContext.save()
         } catch (let error) {
             print(error)
         }

@@ -86,12 +86,12 @@
 		DDBC5EBB27BD276200FAD85F /* tax-mate */ = {
 			isa = PBXGroup;
 			children = (
+				DDBC5EFF27BE4D5B00FAD85F /* Database */,
+				DDBC5EFE27BE4D4F00FAD85F /* Views */,
 				DDBC5EFB27BDDB3900FAD85F /* Model */,
 				DDBC5EF827BDD9E500FAD85F /* Repository */,
-				DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */,
-				DDBC5EBE27BD276200FAD85F /* ContentView.swift */,
 				DDBC5EC027BD276300FAD85F /* Assets.xcassets */,
-				DDBC5EC527BD276300FAD85F /* Persistence.swift */,
+				DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */,
 				DDBC5EC727BD276300FAD85F /* tax_mate.xcdatamodeld */,
 				DDBC5EC227BD276300FAD85F /* Preview Content */,
 			);
@@ -135,6 +135,22 @@
 				DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DDBC5EFE27BE4D4F00FAD85F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5EBE27BD276200FAD85F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDBC5EFF27BE4D5B00FAD85F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5EC527BD276300FAD85F /* Persistence.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
