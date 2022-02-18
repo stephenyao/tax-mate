@@ -11,6 +11,7 @@ struct AddDeductionsView: View {
     @State var name: String = ""
     @State var cost: String = ""
     @State var date: Date = .now
+    @State var image: UIImage?
     @Binding var showsModal: Bool
     
     private let repository = DeductionsRepository()
@@ -42,6 +43,10 @@ struct AddDeductionsView: View {
                         HStack {
                             DatePicker("Date", selection: $date, displayedComponents: .date)
                         }
+                    }
+                    
+                    VStack {
+                        ImagePickerButton(image: $image)
                     }
                 }
                 .padding()

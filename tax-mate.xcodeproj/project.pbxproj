@@ -22,6 +22,10 @@
 		DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5F0327BE4DFE00FAD85F /* Fakery */; };
 		DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0627BE57E900FAD85F /* PresentModalButton.swift */; };
 		DDBC5F0927BE582100FAD85F /* AddDeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0827BE582100FAD85F /* AddDeductionsView.swift */; };
+		DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0A27BFAA4800FAD85F /* UIImage+Utils.swift */; };
+		DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */; };
+		DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */; };
+		DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDb.swift; sourceTree = "<group>"; };
 		DDBC5F0627BE57E900FAD85F /* PresentModalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentModalButton.swift; sourceTree = "<group>"; };
 		DDBC5F0827BE582100FAD85F /* AddDeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeductionsView.swift; sourceTree = "<group>"; };
+		DDBC5F0A27BFAA4800FAD85F /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerButton.swift; sourceTree = "<group>"; };
+		DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				DDBC5F0627BE57E900FAD85F /* PresentModalButton.swift */,
+				DDBC5F0A27BFAA4800FAD85F /* UIImage+Utils.swift */,
+				DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */,
+				DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */,
+				DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -287,12 +299,16 @@
 				DDBC5F0927BE582100FAD85F /* AddDeductionsView.swift in Sources */,
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
+				DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */,
 				DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */,
 				DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */,
+				DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */,
 				DDBC5F0127BE4D8D00FAD85F /* SeedDb.swift in Sources */,
+				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
 				DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
+				DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
