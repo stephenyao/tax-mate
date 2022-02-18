@@ -22,7 +22,7 @@ struct DeductionsView: View {
             .listStyle(.plain)
             .navigationTitle("Deductions")
             .navigationBarItems(trailing: PresentModalButton(showNewItem: $showsAddDeductions) {
-                AddDeductionsView()
+                AddDeductionsView(showsModal: $showsAddDeductions)
             })
         }
         .navigationViewStyle(.stack)
