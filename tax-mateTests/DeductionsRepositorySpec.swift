@@ -15,12 +15,17 @@ import CoreData
 final class DeductionsRepositorySepc: QuickSpec {
     
     override func spec() {
-        let persistenceController = PersistenceController(inMemory: true)
-        let repository = DeductionsRepository(persistenceStore: persistenceController)
+        var persistenceController: PersistenceController!
+        var repository: DeductionsRepository!
         
         describe("DeductionsRepositorySpec") {
+            beforeEach {
+                persistenceController = PersistenceController(inMemory: true)
+                repository = DeductionsRepository(persistenceStore: persistenceController)
+            }
+            
             context("Insert") {
-                it("should store a deduction to persistent storage") {
+                beforeEach {
                     let deduction =
                     Deduction(
                         name: "name",
@@ -29,7 +34,9 @@ final class DeductionsRepositorySepc: QuickSpec {
                         cost: 100
                     )
                     repository.insert(deduction: deduction)
-                    
+                }
+                
+                it("should store a deduction to persistent storage") {
                     let request = ManagedDeduction.fetchRequest()
                     let result = try! persistenceController.container.viewContext.fetch(request)
                     expect(result.count).to(equal(1))
@@ -37,6 +44,23 @@ final class DeductionsRepositorySepc: QuickSpec {
                     expect(result.first?.date).to(equal(Date.init(timeIntervalSinceReferenceDate: 100)))
                     expect(result.first?.image).to(beNil())
                     expect(result.first?.cost).to(equal(100))
+                }
+            }
+            
+            context("Fetch") {
+                beforeEach {
+                    for i in 0..<10 {
+                        let viewContext = persistenceController.container.viewContext
+                        let managedDeduction = ManagedDeduction(context: viewContext)
+                        managedDeduction.name = "\(i)"
+                        try! viewContext.save()
+                    }
+                }
+                
+                it("should fetch deductions from persistent storage") {
+                    let request = ManagedDeduction.fetchRequest()
+                    let result = try! persistenceController.container.viewContext.fetch(request)
+                    expect(result.count).to(equal(10))
                 }
             }
         }
