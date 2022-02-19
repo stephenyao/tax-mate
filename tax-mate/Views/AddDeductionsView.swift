@@ -52,7 +52,7 @@ struct AddDeductionsView: View {
                 .padding()
                 
                 Button("Save") {
-                    let deduction = Deduction(name: name, date: date, image: nil, cost: Double(cost) ?? 0)
+                    let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
                     repository.insert(deduction: deduction)
                     showsModal = false
                 }

@@ -16,7 +16,7 @@ struct DeductionsView: View {
         NavigationView {
             List {
                 ForEach(repository.fetch(), id: \.identifier) {
-                    Text($0.name)
+                    NavigationLink($0.name, destination: DeductionDetailsView(deduction: $0))
                 }
             }
             .listStyle(.plain)

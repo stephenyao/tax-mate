@@ -26,6 +26,7 @@
 		DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */; };
 		DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */; };
 		DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */; };
+		DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerButton.swift; sourceTree = "<group>"; };
 		DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				DDBC5F0527BE57D400FAD85F /* Common */,
 				DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */,
 				DDBC5F0827BE582100FAD85F /* AddDeductionsView.swift */,
+				DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
 				DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
+				DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 				DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */,
 			);
