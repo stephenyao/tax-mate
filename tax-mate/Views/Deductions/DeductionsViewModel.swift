@@ -17,7 +17,7 @@ final class DeductionsViewModel: ObservableObject {
     
     init(observer: AnyDBObserver<[Deduction]>) {
         self.observer = observer
-        self.cancellable = observer.entityChangedPublisher.assign(to: \.deductions, on: self)
+        self.cancellable = observer.entityChangedPublisher.assignNoRetain(to: \.deductions, on: self)
     }
     
     
