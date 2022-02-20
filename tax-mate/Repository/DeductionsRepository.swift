@@ -44,7 +44,7 @@ final class DeductionsRepository {
 
 }
 
-private extension ManagedDeduction {
+extension ManagedDeduction {
     func copyAttributes(from deduction: Deduction) {
         self.name = deduction.name
         self.cost = deduction.cost
@@ -54,7 +54,7 @@ private extension ManagedDeduction {
     }
 }
 
-private extension ManagedDeduction {
+extension ManagedDeduction {
     func toPlainObject() -> Deduction {
         guard let name = name,
               let date = date else {
