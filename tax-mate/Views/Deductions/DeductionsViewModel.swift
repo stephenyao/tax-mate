@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import Combine
 
-final class DeductionsViewModel {
-    let deduction: Deduction
+final class DeductionsViewModel: ObservableObject {
     
-    init(deduction: Deduction) {
-        self.deduction = deduction
+    @Published var deductions: [Deduction] = []
+    
+    private let observer: AnyDBObserver<[Deduction]>
+    private var cancellable: AnyCancellable!
+    
+    init(observer: AnyDBObserver<[Deduction]>) {
+        self.observer = observer
+        self.cancellable = observer.entityChangedPublisher.assign(to: \.deductions, on: self)
     }
     
     

@@ -33,6 +33,7 @@
 		DDF6A48227C22C9B0012131B /* DBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48127C22C9B0012131B /* DBObserver.swift */; };
 		DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */; };
 		DDF6A48627C24A1C0012131B /* AnyObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */; };
+		DDF6A48827C24FD90012131B /* DeductionsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		DDF6A48127C22C9B0012131B /* DBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserver.swift; sourceTree = "<group>"; };
 		DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsTestHelper.swift; sourceTree = "<group>"; };
 		DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserverSpec.swift; sourceTree = "<group>"; };
+		DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModelSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */,
 				DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */,
 				DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */,
+				DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */,
 			);
 			path = "tax-mateTests";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */,
 				DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */,
 				DDF6A48627C24A1C0012131B /* AnyObserverSpec.swift in Sources */,
+				DDF6A48827C24FD90012131B /* DeductionsViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
