@@ -9,18 +9,20 @@ import Foundation
 import Combine
 import CoreData
 
-protocol DBObserver {
-    associatedtype Entity
-    var subject: CurrentValueSubject<Entity, Never> { get }
-}
-
 final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControllerDelegate {
-    let subject: CurrentValueSubject<[Deduction], Never>
+    
+    private let subject: CurrentValueSubject<[Deduction], Never>
     private let persistence: PersistenceController
+    var entityChangedPublisher: AnyPublisher<[Deduction], Never> {
+        subject.eraseToAnyPublisher()
+    }
+    private var controller: NSFetchedResultsController<ManagedDeduction>!
     
     init(persistence: PersistenceController = PersistenceController.shared) {
         self.subject = CurrentValueSubject([])
         self.persistence = persistence
+        super.init()
+        load()
     }
     
     private func load() {
@@ -35,6 +37,7 @@ final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControll
             fatalError("Failed to fetch entities: \(error)")
         }
         controller.delegate = self
+        self.controller = controller
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -43,4 +46,5 @@ final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControll
         }
         subject.send(results.map { $0.toPlainObject() })
     }
+    
 }

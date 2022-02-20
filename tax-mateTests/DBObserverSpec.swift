@@ -24,29 +24,33 @@ final class DBObserverSpec: QuickSpec {
             
             context("fetching the initial values") {
                 it("should first send an empty array") {
-                    observer.subject.sink { deductions in
+                    observer.entityChangedPublisher.sink { deductions in
                         expect(deductions.count).to(equal(0))
                     }.store(in: &cancellabels)
                 }
                 
                 it("should subsequently send an array of deductions from the DB") {
                     var firstReceived = false
+                    var secondReceived = false
                     
-                    observer.subject.sink { deductions in
-                        if firstReceived {
-                            expect(deductions.count).to(equal(10))
-                        } else {
+                    observer.entityChangedPublisher.sink { deductions in
+                        if !firstReceived {
                             expect(deductions.count).to(equal(0))
                             firstReceived = true
+                        } else {
+                            expect(deductions.count).to(equal(10))
+                            secondReceived = true
                         }
                     }.store(in: &cancellabels)
-                    
-                    for i in 0..<10 {
-                        let viewContext = persistenceController.container.viewContext
-                        let managedDeduction = ManagedDeduction(context: viewContext)
-                        managedDeduction.name = "\(i)"
-                        try! viewContext.save()
+                                     
+                    let viewContext = persistenceController.container.viewContext
+                    for _ in 0..<10 {
+                        let _ = DeductionsTestHelper.insertFakeObject(to: viewContext)
                     }
+                    try! viewContext.save()
+
+                    expect(firstReceived).toEventually(beTrue())
+                    expect(secondReceived).toEventually(beTrue())
                 }
             }
         }

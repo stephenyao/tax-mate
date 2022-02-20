@@ -30,6 +30,8 @@
 		DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */; };
 		DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */; };
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
+		DDF6A48227C22C9B0012131B /* DBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48127C22C9B0012131B /* DBObserver.swift */; };
+		DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModel.swift; sourceTree = "<group>"; };
 		DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsDBObserver.swift; sourceTree = "<group>"; };
 		DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserverSpec.swift; sourceTree = "<group>"; };
+		DDF6A48127C22C9B0012131B /* DBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserver.swift; sourceTree = "<group>"; };
+		DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsTestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			children = (
 				DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */,
 				DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */,
+				DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */,
 			);
 			path = "tax-mateTests";
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				DDBC5EC527BD276300FAD85F /* Persistence.swift */,
 				DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */,
+				DDF6A48127C22C9B0012131B /* DBObserver.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
 				DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */,
 				DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */,
+				DDF6A48227C22C9B0012131B /* DBObserver.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */,
 				DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */,
@@ -339,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */,
 				DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */,
 				DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */,
 			);

@@ -49,10 +49,9 @@ final class DeductionsRepositorySepc: QuickSpec {
             
             context("Fetch") {
                 beforeEach {
-                    for i in 0..<10 {
+                    for _ in 0..<10 {
                         let viewContext = persistenceController.container.viewContext
-                        let managedDeduction = ManagedDeduction(context: viewContext)
-                        managedDeduction.name = "\(i)"
+                        let _ = DeductionsTestHelper.insertFakeObject(to: viewContext)
                         try! viewContext.save()
                     }
                 }
