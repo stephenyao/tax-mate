@@ -15,8 +15,10 @@ protocol DBObserver {
 
 final class AnyDBObserver<Entity>: DBObserver {
     let entityChangedPublisher: AnyPublisher<Entity, Never>
+    private let observer: Any
     
     init<Observer: DBObserver>(wrapped: Observer) where Observer.Entity == Entity {
+        self.observer = wrapped
         self.entityChangedPublisher = wrapped.entityChangedPublisher
     }
 }

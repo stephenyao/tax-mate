@@ -14,11 +14,11 @@ final class DeductionsViewModel: ObservableObject {
     
     private let observer: AnyDBObserver<[Deduction]>
     private var cancellable: AnyCancellable!
+    private var c: AnyCancellable!
     
-    init(observer: AnyDBObserver<[Deduction]>) {
+    init(observer: AnyDBObserver<[Deduction]> = AnyDBObserver<[Deduction]>(wrapped: DeductionsDBObserver(persistence: PersistenceController.shared))) {
         self.observer = observer
         self.cancellable = observer.entityChangedPublisher.assignNoRetain(to: \.deductions, on: self)
     }
-    
     
 }

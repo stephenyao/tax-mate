@@ -33,6 +33,11 @@ final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControll
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         do {
             try controller.performFetch()
+            guard let results = controller.fetchedObjects else {
+                fatalError("Fetched objects could not be cast to Deductions")
+            }
+            
+            subject.send(results.map { $0.toPlainObject() })
         } catch {
             fatalError("Failed to fetch entities: \(error)")
         }

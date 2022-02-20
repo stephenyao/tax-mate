@@ -9,13 +9,13 @@ import SwiftUI
 import CoreData
 
 struct DeductionsView: View {
-    private let repository = DeductionsRepository()
+    @StateObject private var viewModel = DeductionsViewModel()
     @State var showsAddDeductions = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(repository.fetch(), id: \.identifier) {
+                ForEach(viewModel.deductions, id: \.identifier) {
                     NavigationLink($0.name, destination: DeductionDetailsView(deduction: $0))
                 }
             }
