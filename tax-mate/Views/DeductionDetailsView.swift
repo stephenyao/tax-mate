@@ -10,6 +10,7 @@ import SwiftUI
 struct DeductionDetailsView: View {
     let deduction: Deduction
     private let repository = DeductionsRepository()
+    @State var confirm = false
     
     var body: some View {
         VStack {
@@ -32,6 +33,16 @@ struct DeductionDetailsView: View {
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
+            }
+        }
+        .navigationBarItems(trailing: MoreActionsButton {
+            Button("Delete deduction", role: .destructive) {
+                confirm = true
+            }
+        })
+        .alert("Are you sure you want to delet this deduction?", isPresented: $confirm) {
+            Button("Confirm", role: .destructive) {
+                print("deleting")
             }
         }
     }
