@@ -62,6 +62,31 @@ final class DeductionsRepositorySepc: QuickSpec {
                     expect(result.count).to(equal(10))
                 }
             }
+            
+            context("Delete") {
+                var testObject: Deduction!
+                
+                beforeEach {
+                    let deduction =
+                    Deduction(
+                        name: "name",
+                        date: Date.init(timeIntervalSinceReferenceDate: 100),
+                        image: nil,
+                        cost: 100
+                    )
+                    repository.insert(deduction: deduction)
+                    testObject = deduction
+                }
+                
+                it("will delete the deduction") {
+                    var result = repository.fetch()
+                    expect(result.count).to(equal(1))
+                    repository.delete(deduction: testObject)
+                    result = repository.fetch()
+                    expect(result.count).to(equal(0))
+                    
+                }
+            }
         }
     }
     
