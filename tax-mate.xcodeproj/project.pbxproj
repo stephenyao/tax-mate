@@ -28,6 +28,8 @@
 		DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */; };
 		DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */; };
 		DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */; };
+		DDBF6EBF27EF22900029DA8B /* DeductionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */; };
+		DDBF6EC127EF233D0029DA8B /* DeductionsGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */; };
 		DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */; };
 		DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */; };
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
@@ -69,6 +71,8 @@
 		DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerButton.swift; sourceTree = "<group>"; };
 		DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionDetailsView.swift; sourceTree = "<group>"; };
+		DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionGroup.swift; sourceTree = "<group>"; };
+		DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsGroupSpec.swift; sourceTree = "<group>"; };
 		DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModel.swift; sourceTree = "<group>"; };
 		DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsDBObserver.swift; sourceTree = "<group>"; };
 		DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserverSpec.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */,
 				DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */,
 				DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */,
+				DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */,
 			);
 			path = "tax-mateTests";
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */,
+				DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 				DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */,
+				DDBF6EBF27EF22900029DA8B /* DeductionGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +377,7 @@
 			files = (
 				DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */,
 				DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */,
+				DDBF6EC127EF233D0029DA8B /* DeductionsGroupSpec.swift in Sources */,
 				DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */,
 				DDF6A48627C24A1C0012131B /* AnyObserverSpec.swift in Sources */,
 				DDF6A48827C24FD90012131B /* DeductionsViewModelSpec.swift in Sources */,
