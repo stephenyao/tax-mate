@@ -15,8 +15,12 @@ struct DeductionsView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.deductions, id: \.identifier) {
-                    NavigationLink($0.name, destination: DeductionDetailsView(deduction: $0))
+                ForEach(viewModel.deductionsGroup, id: \.date) { group in
+                    Section(header: Text(group.date.description)) {
+                        ForEach(group.deductions, id: \.identifier) { deduction in
+                            NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
+                        }
+                    }
                 }
             }
             .listStyle(.plain)
