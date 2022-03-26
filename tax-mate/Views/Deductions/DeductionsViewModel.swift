@@ -10,14 +10,16 @@ import Combine
 
 final class DeductionsViewModel: ObservableObject {
     
-    @Published var deductions: [Deduction] = []
+    @Published var deductionsGroup: [DeductionsGroup] = []
     
     private let observer: AnyDBObserver<[Deduction]>
     private var cancellable: AnyCancellable!
     
     init(observer: AnyDBObserver<[Deduction]> = AnyDBObserver<[Deduction]>(wrapped: DeductionsDBObserver(persistence: PersistenceController.shared))) {
         self.observer = observer
-        self.cancellable = observer.entityChangedPublisher.assignNoRetain(to: \.deductions, on: self)
+        self.cancellable = observer.entityChangedPublisher.sink { [weak self] in
+            self?.deductionsGroup =  DeductionsGroup.groups(from: $0)
+        }
     }
         
 }
