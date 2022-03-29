@@ -13,7 +13,7 @@ final class DeductionsRepository {
     private let persistenceStore: PersistenceController
     
     private lazy var viewContext: NSManagedObjectContext = {
-        persistenceStore.container.newBackgroundContext()
+        persistenceStore.container.viewContext
     }()
     
     init(persistenceStore: PersistenceController = PersistenceController.shared) {
