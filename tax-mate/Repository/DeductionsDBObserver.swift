@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreData
 
-final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControllerDelegate {
+final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelegate {
     
     private let subject: CurrentValueSubject<[Deduction], Never>
     private let persistence: PersistenceController
@@ -17,17 +17,21 @@ final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControll
         subject.eraseToAnyPublisher()
     }
     private var controller: NSFetchedResultsController<ManagedDeduction>!
+    private let pageSize: Int = 25
+    private var currentPage: Int = 1
     
     init(persistence: PersistenceController = PersistenceController.shared) {
         self.subject = CurrentValueSubject([])
         self.persistence = persistence
         super.init()
-        load()
+        loadNext()
     }
     
-    private func load() {
+    func loadNext() {
         let context = persistence.container.viewContext
         let fetchRequest = ManagedDeduction.fetchRequest()
+        fetchRequest.fetchLimit = pageSize * currentPage
+        
         // Configure the request's entity, and optionally its predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -43,6 +47,7 @@ final class DeductionsDBObserver: NSObject, DBObserver, NSFetchedResultsControll
         }
         controller.delegate = self
         self.controller = controller
+        self.currentPage += 1
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

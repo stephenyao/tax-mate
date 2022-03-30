@@ -9,7 +9,9 @@ import SwiftUI
 import CoreData
 
 struct DeductionsView: View {
-    @StateObject private var viewModel = DeductionsViewModel()
+    @StateObject private var viewModel = DeductionsViewModel(
+        pagingObserver: DeductionsPagingObserver()
+    )
     @State var showsAddDeductions = false
     
     var body: some View {
@@ -22,6 +24,10 @@ struct DeductionsView: View {
                         }
                     }
                 }
+                Text("Loading...")
+                    .onAppear {
+                        self.viewModel.loadNext()
+                    }
             }
             .listStyle(.plain)
             .navigationTitle("Deductions")
