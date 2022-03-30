@@ -18,7 +18,7 @@ struct DeductionsView: View {
         NavigationView {
             List {
                 ForEach(viewModel.deductionsGroup, id: \.date) { group in
-                    Section(header: Text(group.date.description)) {
+                    Section(header: Text(viewModel.displayString(for: group.date))) {
                         ForEach(group.deductions, id: \.identifier) { deduction in
                             NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
                         }

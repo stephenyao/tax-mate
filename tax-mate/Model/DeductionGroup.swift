@@ -9,7 +9,7 @@ import Foundation
 
 struct DeductionsGroup {
     let date: Date
-    let deductions: [Deduction]
+    let deductions: [Deduction]    
     
     static func groups(from deductions: [Deduction]) -> [DeductionsGroup] {
         return group(deductions: deductions)
