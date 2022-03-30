@@ -17,6 +17,8 @@ struct DeductionsView: View {
     var body: some View {
         NavigationView {
             List {
+                SearchBar()
+                    .listRowSeparator(.hidden)
                 ForEach(viewModel.deductionsGroup, id: \.date) { group in
                     Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
                         ForEach(group.deductions, id: \.identifier) { deduction in
