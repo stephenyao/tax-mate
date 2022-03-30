@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 
 struct SearchBar: View {
+    @State var query: String = ""
+    
     private var backgroundColor: Color {
-        Color(UIColor.systemGray5)
+        Color(UIColor.systemGray6)
     }
     
     private var foregroundColor: Color {
@@ -18,19 +20,22 @@ struct SearchBar: View {
     }
     
     var body: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-            Text("Search")
-            Spacer()
+        ZStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search", text: $query)
+                Spacer()
+            }
+            .padding([.leading], 4)
+            .foregroundColor(foregroundColor)
+            .padding(0)
+            .frame(minWidth: 250)
+            .frame(height: 44)
+            .background(
+                RoundedRectangle(cornerSize: CGSize(width: 11.0, height: 11.0))
+                    .foregroundColor(backgroundColor)
+            )
         }
-        .foregroundColor(foregroundColor)
-        .padding()
-//        .frame(minWidth: 250)
-        .frame(height: 44)
-        .background(
-            RoundedRectangle(cornerSize: CGSize(width: 11.0, height: 11.0))
-                .foregroundColor(backgroundColor)
-        )
     }
 }
 
