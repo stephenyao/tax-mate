@@ -31,6 +31,7 @@ struct SearchDeductionsView: View {
                 }
                 .offset(x: buttonOffset)
             }
+            .padding()
             Spacer()
         }
         .onAppear {
@@ -38,5 +39,19 @@ struct SearchDeductionsView: View {
                 self.buttonOffset = 0
             }
         }
+    }
+}
+
+struct DummySearchContainer: View {
+    @Namespace var namespace
+    
+    var body: some View {
+        SearchDeductionsView(namespace: namespace, isSearching: .constant(true))
+    }
+}
+
+struct Previews_DeductionsSearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        DummySearchContainer()
     }
 }
