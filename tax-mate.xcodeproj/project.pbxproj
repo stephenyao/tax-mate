@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD2A5BBB27DF67CD001E7500 /* MoreActionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */; };
+		DD55C15527F4595B003D05EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15427F4595B003D05EE /* Colors.swift */; };
 		DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */; };
 		DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */; };
 		DDBC5EC127BD276300FAD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBC5EC027BD276300FAD85F /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionsButton.swift; sourceTree = "<group>"; };
+		DD55C15427F4595B003D05EE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DDBC5EB927BD276200FAD85F /* tax-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tax-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateApp.swift; sourceTree = "<group>"; };
 		DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				DDF6A48A27C252E30012131B /* Assign.swift */,
+				DD55C15427F4595B003D05EE /* Colors.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5F0927BE582100FAD85F /* AddDeductionsView.swift in Sources */,
+				DD55C15527F4595B003D05EE /* Colors.swift in Sources */,
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */,
