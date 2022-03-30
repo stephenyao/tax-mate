@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @State var query: String = ""
-    @State var isActive: Bool = false
+    @Binding var isActive: Bool
     
     private var backgroundColor: Color {
         Color(UIColor.systemGray6)
@@ -27,7 +27,9 @@ struct SearchBar: View {
                 TextField("Search", text: $query)
                     .frame(height: 44)
                     .onTapGesture {
-                        self.isActive = true
+                        withAnimation {
+                            self.isActive = true
+                        }
                     }
             }
             Spacer()
@@ -46,9 +48,9 @@ struct SearchBar: View {
 
 struct Previews_SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar().preferredColorScheme(.light)
+        SearchBar(isActive: .constant(false)).preferredColorScheme(.light)
             .frame(width: 300)
-        SearchBar().preferredColorScheme(.dark)
+        SearchBar(isActive: .constant(false)).preferredColorScheme(.dark)
             .frame(width: 300)
     }
 }
