@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @State var query: String = ""
+    @State var isActive: Bool = false
     
     private var backgroundColor: Color {
         Color(UIColor.systemGray6)
@@ -20,22 +21,26 @@ struct SearchBar: View {
     }
     
     var body: some View {
-        ZStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
+        HStack {
+            Image(systemName: "magnifyingglass")
+            GeometryReader { geo in
                 TextField("Search", text: $query)
-                Spacer()
+                    .frame(height: 44)
+                    .onTapGesture {
+                        self.isActive = true
+                    }
             }
-            .padding([.leading], 4)
-            .foregroundColor(foregroundColor)
-            .padding(0)
-            .frame(minWidth: 250)
-            .frame(height: 44)
-            .background(
-                RoundedRectangle(cornerSize: CGSize(width: 11.0, height: 11.0))
-                    .foregroundColor(backgroundColor)
-            )
+            Spacer()
         }
+        .padding([.leading], 4)
+        .foregroundColor(foregroundColor)
+        .padding(0)
+        .frame(minWidth: 250)
+        .frame(height: 44)
+        .background(
+            RoundedRectangle(cornerSize: CGSize(width: 11.0, height: 11.0))
+                .foregroundColor(backgroundColor)
+        )
     }
 }
 
