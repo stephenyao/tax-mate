@@ -24,10 +24,13 @@ struct DeductionsView: View {
                         }
                     }
                 }
-                Text("Loading...")
-                    .onAppear {
-                        self.viewModel.loadNext()
-                    }
+                
+                if viewModel.hasNext() {                    
+                    Text("Loading...")
+                        .onAppear {
+                            self.viewModel.loadNext()
+                        }
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Deductions")

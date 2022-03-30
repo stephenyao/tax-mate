@@ -19,7 +19,7 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
     private var controller: NSFetchedResultsController<ManagedDeduction>!
     private let pageSize: Int = 25
     private var currentPage: Int = 1
-    
+
     init(persistence: PersistenceController = PersistenceController.shared) {
         self.subject = CurrentValueSubject([])
         self.persistence = persistence
@@ -48,6 +48,13 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
         controller.delegate = self
         self.controller = controller
         self.currentPage += 1
+    }
+    
+    func hasNext() -> Bool {
+        let context = persistence.container.viewContext
+        let totalCount = (try? context.count(for: ManagedDeduction.fetchRequest())) ?? 0
+        let fetchedCount = controller.fetchedObjects?.count ?? 0
+        return totalCount != fetchedCount
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

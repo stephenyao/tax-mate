@@ -19,11 +19,15 @@ final class DeductionsViewModel: ObservableObject {
     ) {
         self.pagingObserver = pagingObserver
         self.cancellable = pagingObserver.entityChangedPublisher.sink { [weak self] in
-            self?.deductionsGroup =  DeductionsGroup.groups(from: $0)
+            self?.deductionsGroup = DeductionsGroup.groups(from: $0)
         }
     }
     
     func loadNext() {
         pagingObserver.loadNext()
+    }
+    
+    func hasNext() -> Bool {
+        pagingObserver.hasNext()
     }
 }
