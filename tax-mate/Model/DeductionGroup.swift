@@ -30,7 +30,7 @@ private func group(deductions: [Deduction]) -> [DeductionsGroup] {
     
     return dateMap.map { (key: Date, value: [Deduction]) in
         DeductionsGroup(date: key, deductions: value)
-    }
+    }.sorted { $0.date > $1.date }
 }
 
 private func startOfDay(for date: Date) -> Date {
