@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Introspect
 
 struct SearchDeductionsView: View {
     var namespace: Namespace.ID
@@ -18,6 +19,9 @@ struct SearchDeductionsView: View {
             HStack {
                 SearchBar(isActive: $isSearching)
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
+                    .introspectTextField { textField in
+                        textField.becomeFirstResponder()
+                    }
                 Button {
                     withAnimation {
                         self.isSearching = false

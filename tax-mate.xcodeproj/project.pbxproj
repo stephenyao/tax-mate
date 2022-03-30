@@ -32,6 +32,7 @@
 		DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */; };
 		DDBF6EBF27EF22900029DA8B /* DeductionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */; };
 		DDBF6EC127EF233D0029DA8B /* DeductionsGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */; };
+		DDF2202027F4761D0065C794 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = DDF2201F27F4761D0065C794 /* Introspect */; };
 		DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */; };
 		DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */; };
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
@@ -87,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */,
+				DDF2202027F4761D0065C794 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +253,7 @@
 			name = "tax-mate";
 			packageProductDependencies = (
 				DDBC5F0327BE4DFE00FAD85F /* Fakery */,
+				DDF2201F27F4761D0065C794 /* Introspect */,
 			);
 			productName = "tax-mate";
 			productReference = DDBC5EB927BD276200FAD85F /* tax-mate.app */;
@@ -310,6 +313,7 @@
 				DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */,
 				DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */,
 				DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */,
+				DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = DDBC5EBA27BD276200FAD85F /* Products */;
 			projectDirPath = "";
@@ -662,6 +666,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -679,6 +691,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */;
 			productName = Fakery;
+		};
+		DDF2201F27F4761D0065C794 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 
