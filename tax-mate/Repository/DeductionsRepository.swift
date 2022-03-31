@@ -43,6 +43,7 @@ final class DeductionsRepository {
     
     func fetch(searchQuery: String) -> [Deduction] {
         let request = ManagedDeduction.fetchRequest()
+        request.fetchLimit = 100
         request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchQuery)
         do {
             let result = try viewContext.fetch(request)
