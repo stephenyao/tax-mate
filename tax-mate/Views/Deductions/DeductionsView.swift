@@ -11,6 +11,7 @@ import CoreData
 struct DeductionsView: View {
     @Namespace var namespace
     @State var isSearching = false
+    @State var searchQuery = ""
     
     var body: some View {
         if isSearching {

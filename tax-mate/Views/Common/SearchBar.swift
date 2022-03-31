@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SearchBar: View {
-    @State var query: String = ""
+    @Binding var query: String
     @Binding var isActive: Bool
     
     private var backgroundColor: Color {
@@ -48,9 +48,9 @@ struct SearchBar: View {
 
 struct Previews_SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(isActive: .constant(false)).preferredColorScheme(.light)
+        SearchBar(query: .constant("test"), isActive: .constant(false)).preferredColorScheme(.light)
             .frame(width: 300)
-        SearchBar(isActive: .constant(false)).preferredColorScheme(.dark)
+        SearchBar(query: .constant("test"), isActive: .constant(false)).preferredColorScheme(.dark)
             .frame(width: 300)
     }
 }

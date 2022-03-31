@@ -41,6 +41,17 @@ final class DeductionsRepository {
         }
     }
     
+    func fetch(searchQuery: String) -> [Deduction] {
+        let request = ManagedDeduction.fetchRequest()
+        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchQuery)
+        do {
+            let result = try viewContext.fetch(request)
+            return result.map { $0.toPlainObject() }
+        } catch (let error) {
+            fatalError("Failed to retrieve deductions with error: \(error.localizedDescription)")
+        }
+    }
+    
     func delete(deduction: Deduction) {
         let request = ManagedDeduction.fetchRequest()
         request.predicate = NSPredicate(format: "identifier = %@", deduction.identifier)

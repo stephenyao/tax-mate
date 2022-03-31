@@ -12,11 +12,12 @@ struct SearchDeductionsView: View {
     var namespace: Namespace.ID
     @Binding var isSearching: Bool
     @State private var buttonOffset: CGFloat = 100
+    @StateObject private var viewModel = SearchDeductionsViewModel()
     
     var body: some View {
         VStack {
             HStack {
-                SearchBar(isActive: $isSearching)
+                SearchBar(query: $viewModel.searchQuery, isActive: $isSearching)
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
                     .introspectTextField { textField in
                         textField.becomeFirstResponder()
@@ -32,7 +33,12 @@ struct SearchDeductionsView: View {
                 .offset(x: buttonOffset)
             }
             .padding()
-            Spacer()
+            List {
+                ForEach(viewModel.searchResults, id: \.identifier) { deduction in
+                    Text(deduction.name)
+                }
+            }
+            .listStyle(.plain)
         }
         .onAppear {
             withAnimation {
