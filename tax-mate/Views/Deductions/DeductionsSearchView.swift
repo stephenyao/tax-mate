@@ -15,35 +15,38 @@ struct SearchDeductionsView: View {
     @StateObject private var viewModel = SearchDeductionsViewModel()
     
     var body: some View {
-        VStack {
-            HStack {
-                SearchBar(query: $viewModel.searchQuery, isActive: $isSearching)
-                    .matchedGeometryEffect(id: "searchbar", in: namespace)
-                    .introspectTextField { textField in
-                        textField.becomeFirstResponder()
+        NavigationView {
+            VStack {
+                HStack {
+                    SearchBar(query: $viewModel.searchQuery, isActive: $isSearching)
+                        .matchedGeometryEffect(id: "searchbar", in: namespace)
+                        .introspectTextField { textField in
+                            textField.becomeFirstResponder()
+                        }
+                    Button {
+                        withAnimation {
+                            self.isSearching = false
+                            self.buttonOffset = 100
+                        }
+                    } label: {
+                        Text("cancel")
                     }
-                Button {
-                    withAnimation {
-                        self.isSearching = false
-                        self.buttonOffset = 100
+                    .offset(x: buttonOffset)
+                }
+                .padding()
+                List {
+                    ForEach(viewModel.searchResults, id: \.identifier) { deduction in
+                        NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
                     }
-                } label: {
-                    Text("cancel")
                 }
-                .offset(x: buttonOffset)
+                .listStyle(.plain)
             }
-            .padding()
-            List {
-                ForEach(viewModel.searchResults, id: \.identifier) { deduction in
-                    Text(deduction.name)
+            .onAppear {
+                withAnimation {
+                    self.buttonOffset = 0
                 }
             }
-            .listStyle(.plain)
-        }
-        .onAppear {
-            withAnimation {
-                self.buttonOffset = 0
-            }
+            .navigationBarHidden(true)
         }
     }
 }
