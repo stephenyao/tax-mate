@@ -24,7 +24,7 @@ struct DeductionsListView: View {
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
                 ForEach(viewModel.deductionsGroup, id: \.date) { group in
                     Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
-                        ForEach(group.deductions, id: \.identifier) { deduction in
+                        ForEach(group.deductions) { deduction in
                             NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
                         }
                     }
