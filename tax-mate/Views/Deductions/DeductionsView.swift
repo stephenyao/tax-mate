@@ -17,8 +17,8 @@ struct DeductionsView: View {
         if isSearching {
             SearchDeductionsView(namespace: namespace, isSearching: $isSearching)
         } else {
-            DeductionsListView(isSearching: $isSearching, namespace: namespace)            
-        }        
+            DeductionsListView(isSearching: $isSearching, namespace: namespace)
+        }
     }
 }
 

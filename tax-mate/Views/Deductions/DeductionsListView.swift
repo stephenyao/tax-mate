@@ -22,6 +22,8 @@ struct DeductionsListView: View {
                 SearchBar(query: $emptySearchQuery, isActive: $isSearching)
                     .listRowSeparator(.hidden)
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
+                DeductionsFilterView()
+                    .listRowSeparator(.hidden)
                 ForEach(viewModel.deductionsGroup, id: \.date) { group in
                     Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
                         ForEach(group.deductions) { deduction in
@@ -44,5 +46,21 @@ struct DeductionsListView: View {
             })
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+
+private struct DummyDeductionsListView: View {
+    @Namespace var namespace
+    
+    var body: some View {
+        DeductionsListView(isSearching: .constant(false), namespace: namespace)
+    }
+}
+
+struct Previews_DeductionsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        DummyDeductionsListView().preferredColorScheme(.light)
+        DummyDeductionsListView().preferredColorScheme(.dark)
     }
 }
