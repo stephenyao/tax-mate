@@ -9,17 +9,34 @@ import Foundation
 import Combine
 
 final class DeductionsViewModel: ObservableObject {
-    
     @Published var deductionsGroup: [DeductionsGroup] = []
     
-    private let observer: AnyDBObserver<[Deduction]>
+    private let pagingObserver: DeductionsPagingObserver
     private var cancellable: AnyCancellable!
+    private lazy var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
     
-    init(observer: AnyDBObserver<[Deduction]> = AnyDBObserver<[Deduction]>(wrapped: DeductionsDBObserver(persistence: PersistenceController.shared))) {
-        self.observer = observer
-        self.cancellable = observer.entityChangedPublisher.sink { [weak self] in
-            self?.deductionsGroup =  DeductionsGroup.groups(from: $0)
+    init(
+        pagingObserver: DeductionsPagingObserver        
+    ) {
+        self.pagingObserver = pagingObserver
+        self.cancellable = pagingObserver.entityChangedPublisher.sink { [weak self] in
+            self?.deductionsGroup = DeductionsGroup.groups(from: $0)
         }
     }
-        
+    
+    func displayString(for date: Date) -> String {
+        formatter.string(from: date)
+    }
+    
+    func loadNext() {
+        pagingObserver.loadNext()
+    }
+    
+    func hasNext() -> Bool {
+        pagingObserver.hasNext()
+    }
 }

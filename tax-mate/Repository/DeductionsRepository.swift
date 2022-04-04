@@ -13,7 +13,7 @@ final class DeductionsRepository {
     private let persistenceStore: PersistenceController
     
     private lazy var viewContext: NSManagedObjectContext = {
-        persistenceStore.container.newBackgroundContext()
+        persistenceStore.container.viewContext
     }()
     
     init(persistenceStore: PersistenceController = PersistenceController.shared) {
@@ -41,9 +41,21 @@ final class DeductionsRepository {
         }
     }
     
+    func fetch(searchQuery: String) -> [Deduction] {
+        let request = ManagedDeduction.fetchRequest()
+        request.fetchLimit = 100
+        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchQuery)
+        do {
+            let result = try viewContext.fetch(request)
+            return result.map { $0.toPlainObject() }
+        } catch (let error) {
+            fatalError("Failed to retrieve deductions with error: \(error.localizedDescription)")
+        }
+    }
+    
     func delete(deduction: Deduction) {
         let request = ManagedDeduction.fetchRequest()
-        request.predicate = NSPredicate(format: "identifier = %@", deduction.identifier)
+        request.predicate = NSPredicate(format: "identifier = %@", deduction.id)
         do {
             let result = try viewContext.fetch(request)
             let obj = result.first!
@@ -59,7 +71,7 @@ extension ManagedDeduction {
     func copyAttributes(from deduction: Deduction) {
         self.name = deduction.name
         self.cost = deduction.cost
-        self.identifier = deduction.identifier
+        self.identifier = deduction.id
         self.date = deduction.date
         self.image = deduction.image?.pngData()
     }
@@ -77,7 +89,7 @@ extension ManagedDeduction {
         let image: UIImage? = self.image != nil ? UIImage(data: self.image!) : nil
         
         return Deduction(
-            identifier: identifier,
+            id: identifier,
             name: name,
             date: date,
             image: image,

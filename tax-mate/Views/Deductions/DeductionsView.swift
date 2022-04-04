@@ -9,27 +9,16 @@ import SwiftUI
 import CoreData
 
 struct DeductionsView: View {
-    @StateObject private var viewModel = DeductionsViewModel()
-    @State var showsAddDeductions = false
+    @Namespace var namespace
+    @State var isSearching = false
+    @State var searchQuery = ""
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.deductionsGroup, id: \.date) { group in
-                    Section(header: Text(group.date.description)) {
-                        ForEach(group.deductions, id: \.identifier) { deduction in
-                            NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
-                        }
-                    }
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Deductions")
-            .navigationBarItems(trailing: PresentModalButton(showNewItem: $showsAddDeductions) {
-                AddDeductionsView(showsModal: $showsAddDeductions)
-            })
+        if isSearching {
+            SearchDeductionsView(namespace: namespace, isSearching: $isSearching)
+        } else {
+            DeductionsListView(isSearching: $isSearching, namespace: namespace)
         }
-        .navigationViewStyle(.stack)
     }
 }
 

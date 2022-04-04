@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DD2A5BBB27DF67CD001E7500 /* MoreActionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */; };
+		DD55C15527F4595B003D05EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15427F4595B003D05EE /* Colors.swift */; };
+		DD55C15727F46401003D05EE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15627F46401003D05EE /* SearchBar.swift */; };
 		DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */; };
 		DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */; };
 		DDBC5EC127BD276300FAD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBC5EC027BD276300FAD85F /* Assets.xcassets */; };
@@ -30,13 +32,15 @@
 		DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */; };
 		DDBF6EBF27EF22900029DA8B /* DeductionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */; };
 		DDBF6EC127EF233D0029DA8B /* DeductionsGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */; };
+		DDF2202027F4761D0065C794 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = DDF2201F27F4761D0065C794 /* Introspect */; };
+		DDF2202227F4781D0065C794 /* SearchDeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202127F4781D0065C794 /* SearchDeductionsView.swift */; };
+		DDF2202427F478EB0065C794 /* DeductionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202327F478EB0065C794 /* DeductionsListView.swift */; };
+		DDF2202627F5A8A50065C794 /* SearchDeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */; };
+		DDF2202A27F71F110065C794 /* DeductionsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202927F71F110065C794 /* DeductionsFilterView.swift */; };
 		DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */; };
 		DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */; };
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
-		DDF6A48227C22C9B0012131B /* DBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48127C22C9B0012131B /* DBObserver.swift */; };
 		DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */; };
-		DDF6A48627C24A1C0012131B /* AnyObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */; };
-		DDF6A48827C24FD90012131B /* DeductionsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */; };
 		DDF6A48B27C252E30012131B /* Assign.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48A27C252E30012131B /* Assign.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionsButton.swift; sourceTree = "<group>"; };
+		DD55C15427F4595B003D05EE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DD55C15627F46401003D05EE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DDBC5EB927BD276200FAD85F /* tax-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tax-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tax_mateApp.swift; sourceTree = "<group>"; };
 		DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsView.swift; sourceTree = "<group>"; };
@@ -73,13 +79,14 @@
 		DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionDetailsView.swift; sourceTree = "<group>"; };
 		DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionGroup.swift; sourceTree = "<group>"; };
 		DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsGroupSpec.swift; sourceTree = "<group>"; };
+		DDF2202127F4781D0065C794 /* SearchDeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeductionsView.swift; sourceTree = "<group>"; };
+		DDF2202327F478EB0065C794 /* DeductionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsListView.swift; sourceTree = "<group>"; };
+		DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeductionsViewModel.swift; sourceTree = "<group>"; };
+		DDF2202927F71F110065C794 /* DeductionsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsFilterView.swift; sourceTree = "<group>"; };
 		DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModel.swift; sourceTree = "<group>"; };
 		DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsDBObserver.swift; sourceTree = "<group>"; };
 		DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserverSpec.swift; sourceTree = "<group>"; };
-		DDF6A48127C22C9B0012131B /* DBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserver.swift; sourceTree = "<group>"; };
 		DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsTestHelper.swift; sourceTree = "<group>"; };
-		DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserverSpec.swift; sourceTree = "<group>"; };
-		DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModelSpec.swift; sourceTree = "<group>"; };
 		DDF6A48A27C252E30012131B /* Assign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */,
+				DDF2202027F4761D0065C794 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +161,6 @@
 				DDBC5EF127BD29E900FAD85F /* DeductionsRepositorySpec.swift */,
 				DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */,
 				DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */,
-				DDF6A48527C24A1C0012131B /* AnyObserverSpec.swift */,
-				DDF6A48727C24FD90012131B /* DeductionsViewModelSpec.swift */,
 				DDBF6EC027EF233D0029DA8B /* DeductionsGroupSpec.swift */,
 			);
 			path = "tax-mateTests";
@@ -201,7 +207,6 @@
 			children = (
 				DDBC5EC527BD276300FAD85F /* Persistence.swift */,
 				DDBC5F0027BE4D8D00FAD85F /* SeedDb.swift */,
-				DDF6A48127C22C9B0012131B /* DBObserver.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				DDBC5F0E27BFAAF100FAD85F /* ImagePickerButton.swift */,
 				DDBC5F1027BFAB1000FAD85F /* SecondaryButton.swift */,
 				DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */,
+				DD55C15627F46401003D05EE /* SearchBar.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -223,7 +229,11 @@
 			isa = PBXGroup;
 			children = (
 				DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */,
+				DDF2202127F4781D0065C794 /* SearchDeductionsView.swift */,
+				DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */,
+				DDF2202327F478EB0065C794 /* DeductionsListView.swift */,
 				DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */,
+				DDF2202927F71F110065C794 /* DeductionsFilterView.swift */,
 			);
 			path = Deductions;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				DDF6A48A27C252E30012131B /* Assign.swift */,
+				DD55C15427F4595B003D05EE /* Colors.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 			name = "tax-mate";
 			packageProductDependencies = (
 				DDBC5F0327BE4DFE00FAD85F /* Fakery */,
+				DDF2201F27F4761D0065C794 /* Introspect */,
 			);
 			productName = "tax-mate";
 			productReference = DDBC5EB927BD276200FAD85F /* tax-mate.app */;
@@ -313,6 +325,7 @@
 				DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */,
 				DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */,
 				DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */,
+				DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = DDBC5EBA27BD276200FAD85F /* Products */;
 			projectDirPath = "";
@@ -349,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC5F0927BE582100FAD85F /* AddDeductionsView.swift in Sources */,
+				DD55C15527F4595B003D05EE /* Colors.swift in Sources */,
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */,
@@ -356,17 +370,21 @@
 				DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */,
 				DD2A5BBB27DF67CD001E7500 /* MoreActionsButton.swift in Sources */,
 				DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */,
+				DDF2202A27F71F110065C794 /* DeductionsFilterView.swift in Sources */,
 				DDBC5F0127BE4D8D00FAD85F /* SeedDb.swift in Sources */,
 				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
 				DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */,
 				DDF6A48B27C252E30012131B /* Assign.swift in Sources */,
 				DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */,
-				DDF6A48227C22C9B0012131B /* DBObserver.swift in Sources */,
+				DD55C15727F46401003D05EE /* SearchBar.swift in Sources */,
+				DDF2202427F478EB0065C794 /* DeductionsListView.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */,
 				DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */,
+				DDF2202227F4781D0065C794 /* SearchDeductionsView.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 				DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */,
+				DDF2202627F5A8A50065C794 /* SearchDeductionsViewModel.swift in Sources */,
 				DDBF6EBF27EF22900029DA8B /* DeductionGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,8 +397,6 @@
 				DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */,
 				DDBF6EC127EF233D0029DA8B /* DeductionsGroupSpec.swift in Sources */,
 				DDBC5EF227BD29E900FAD85F /* DeductionsRepositorySpec.swift in Sources */,
-				DDF6A48627C24A1C0012131B /* AnyObserverSpec.swift in Sources */,
-				DDF6A48827C24FD90012131B /* DeductionsViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +682,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -683,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */;
 			productName = Fakery;
+		};
+		DDF2201F27F4761D0065C794 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 

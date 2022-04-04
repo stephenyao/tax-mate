@@ -24,6 +24,8 @@ private final class DeductionsGroupSpec: QuickSpec {
                 it("Will group them based on date") {
                     let group = DeductionsGroup.groups(from: sameDateDeductions())
                     expect(group.count).to(equal(2))
+                    expect(group.first?.date.timeIntervalSince1970)
+                        .to(beGreaterThan(group.last?.date.timeIntervalSince1970))
                 }
             }
             
@@ -47,7 +49,7 @@ private func differentDateDeductions() -> [Deduction] {
 }
 
 private func sameDateDeductions() -> [Deduction] {
-    let groupOne = Array(repeating: Deduction(name: "", date: .init(timeIntervalSinceReferenceDate: 0), image: nil, cost: 0), count: 10)
+    let groupOne = Array(repeating: Deduction(name: "", date: .init(timeIntervalSince1970: 0), image: nil, cost: 0), count: 10)
     let groupTwo = Array(repeating: Deduction(name: "", date: .init(timeIntervalSince1970: 86400), image: nil, cost: 0), count: 10)
     return groupOne + groupTwo
 }

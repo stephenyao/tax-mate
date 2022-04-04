@@ -9,7 +9,7 @@ import Foundation
 
 struct DeductionsGroup {
     let date: Date
-    let deductions: [Deduction]
+    let deductions: [Deduction]    
     
     static func groups(from deductions: [Deduction]) -> [DeductionsGroup] {
         return group(deductions: deductions)
@@ -30,7 +30,7 @@ private func group(deductions: [Deduction]) -> [DeductionsGroup] {
     
     return dateMap.map { (key: Date, value: [Deduction]) in
         DeductionsGroup(date: key, deductions: value)
-    }
+    }.sorted { $0.date > $1.date }
 }
 
 private func startOfDay(for date: Date) -> Date {

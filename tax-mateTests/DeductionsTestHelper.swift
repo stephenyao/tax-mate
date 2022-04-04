@@ -13,8 +13,13 @@ import Fakery
 final class DeductionsTestHelper {
     static func insertFakeObject(to context: NSManagedObjectContext) -> ManagedDeduction {
         let faker = Faker.init()
+        return insertFakeObject(withName: faker.company.name(), to: context)
+    }
+    
+    static func insertFakeObject(withName name: String, to context: NSManagedObjectContext) -> ManagedDeduction {
+        let faker = Faker.init()
         let d = ManagedDeduction(context: context)
-        d.name = faker.company.name()
+        d.name = name
         d.cost = faker.number.randomDouble(min: 50, max: 1000)
         d.date = faker.date.between(Date.init(timeIntervalSince1970: 0), .now)
         d.identifier = UUID().uuidString

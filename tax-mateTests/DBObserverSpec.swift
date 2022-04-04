@@ -10,16 +10,16 @@ import Nimble
 import Combine
 @testable import tax_mate
 
-final class DBObserverSpec: QuickSpec {
+final class DeductionsPagingObserverSpec: QuickSpec {
     override func spec() {
-        var observer: DeductionsDBObserver!
+        var observer: DeductionsPagingObserver!
         var cancellabels: Set<AnyCancellable> = []
         var persistenceController: PersistenceController!
         
         describe("DBObserverSpec") {
             beforeEach {
                 persistenceController =  PersistenceController(inMemory: true)
-                observer = DeductionsDBObserver(persistence: persistenceController)
+                observer = DeductionsPagingObserver(persistence: persistenceController)
             }
             
             context("fetching the initial values") {
