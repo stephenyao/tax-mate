@@ -16,7 +16,7 @@ struct DeductionsListView: View {
     @Binding var isSearching: Bool
     var namespace: Namespace.ID
     
-    var body: some View {
+    var body: some View {        
         NavigationView {
             List {
                 SearchBar(query: $emptySearchQuery, isActive: $isSearching)
@@ -31,7 +31,7 @@ struct DeductionsListView: View {
                         }
                     }
                 }
-                
+
                 if viewModel.hasNext() {
                     Text("Loading...")
                         .onAppear {

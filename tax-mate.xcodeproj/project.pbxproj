@@ -37,6 +37,8 @@
 		DDF2202427F478EB0065C794 /* DeductionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202327F478EB0065C794 /* DeductionsListView.swift */; };
 		DDF2202627F5A8A50065C794 /* SearchDeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */; };
 		DDF2202A27F71F110065C794 /* DeductionsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202927F71F110065C794 /* DeductionsFilterView.swift */; };
+		DDF2202F27FB26A20065C794 /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2202E27FB26A20065C794 /* DateFilterView.swift */; };
+		DDF2203227FC506C0065C794 /* FilterSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2203127FC506C0065C794 /* FilterSummary.swift */; };
 		DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */; };
 		DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */; };
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
@@ -83,6 +85,8 @@
 		DDF2202327F478EB0065C794 /* DeductionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsListView.swift; sourceTree = "<group>"; };
 		DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeductionsViewModel.swift; sourceTree = "<group>"; };
 		DDF2202927F71F110065C794 /* DeductionsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsFilterView.swift; sourceTree = "<group>"; };
+		DDF2202E27FB26A20065C794 /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
+		DDF2203127FC506C0065C794 /* FilterSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSummary.swift; sourceTree = "<group>"; };
 		DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsViewModel.swift; sourceTree = "<group>"; };
 		DDF6A47D27C1EDEF0012131B /* DeductionsDBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsDBObserver.swift; sourceTree = "<group>"; };
 		DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserverSpec.swift; sourceTree = "<group>"; };
@@ -225,15 +229,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		DDF2203027FC50590065C794 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				DDF2202927F71F110065C794 /* DeductionsFilterView.swift */,
+				DDF2202E27FB26A20065C794 /* DateFilterView.swift */,
+				DDF2203127FC506C0065C794 /* FilterSummary.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		DDF6A47A27C1C2710012131B /* Deductions */ = {
 			isa = PBXGroup;
 			children = (
+				DDF2203027FC50590065C794 /* Filters */,
 				DDBC5EBE27BD276200FAD85F /* DeductionsView.swift */,
 				DDF2202127F4781D0065C794 /* SearchDeductionsView.swift */,
 				DDF2202527F5A8A50065C794 /* SearchDeductionsViewModel.swift */,
 				DDF2202327F478EB0065C794 /* DeductionsListView.swift */,
 				DDF6A47B27C1C2880012131B /* DeductionsViewModel.swift */,
-				DDF2202927F71F110065C794 /* DeductionsFilterView.swift */,
 			);
 			path = Deductions;
 			sourceTree = "<group>";
@@ -363,11 +377,13 @@
 			files = (
 				DDBC5F0927BE582100FAD85F /* AddDeductionsView.swift in Sources */,
 				DD55C15527F4595B003D05EE /* Colors.swift in Sources */,
+				DDF2202F27FB26A20065C794 /* DateFilterView.swift in Sources */,
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */,
 				DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */,
 				DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */,
+				DDF2203227FC506C0065C794 /* FilterSummary.swift in Sources */,
 				DD2A5BBB27DF67CD001E7500 /* MoreActionsButton.swift in Sources */,
 				DDBC5F1127BFAB1000FAD85F /* SecondaryButton.swift in Sources */,
 				DDF2202A27F71F110065C794 /* DeductionsFilterView.swift in Sources */,

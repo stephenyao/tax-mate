@@ -31,7 +31,11 @@ struct tax_mateApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DeductionsView()
+            TabView {
+                DeductionsView().tabItem {
+                    Text("a")
+                }
+            }
         }
     }
 
