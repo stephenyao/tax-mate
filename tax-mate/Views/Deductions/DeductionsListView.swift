@@ -14,6 +14,7 @@ struct DeductionsListView: View {
     @State private var showsAddDeductions = false
     @State private var emptySearchQuery = ""
     @Binding var isSearching: Bool
+    @Binding var datefilter: DateFilterOption
     var namespace: Namespace.ID
     
     var body: some View {        
@@ -22,7 +23,7 @@ struct DeductionsListView: View {
                 SearchBar(query: $emptySearchQuery, isActive: $isSearching)
                     .listRowSeparator(.hidden)
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
-                DeductionsFilterView()
+                DeductionsFilterView(selectedOption: $datefilter)
                     .listRowSeparator(.hidden)
                 ForEach(viewModel.deductionsGroup, id: \.date) { group in
                     Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
@@ -54,7 +55,7 @@ private struct DummyDeductionsListView: View {
     @Namespace var namespace
     
     var body: some View {
-        DeductionsListView(isSearching: .constant(false), namespace: namespace)
+        DeductionsListView(isSearching: .constant(false), datefilter: .constant(.all), namespace: namespace)
     }
 }
 

@@ -10,31 +10,25 @@ import SwiftUI
 import Combine
 
 struct DeductionsFilterView: View {
-    @StateObject private var viewModel = ViewModel()
+    @Binding var selectedOption: DateFilterOption
+    @State private var showsFilters = false
     
     var body: some View {
-        if !viewModel.showsFilters {
-            DeductionsFilterSummary(selectionOption: viewModel.selectedOption)
-                .onTapGesture {
-                    withAnimation {
-                        self.viewModel.showsFilters = true
+        Group {
+            if !showsFilters {
+                DeductionsFilterSummary(selectionOption: selectedOption)
+                    .onTapGesture {
+                        withAnimation {
+                            self.showsFilters = true
+                        }
                     }
-                }
-        } else {
-            DateFilterView(selected: $viewModel.selectedOption)
+            } else {
+                DateFilterView(selected: $selectedOption)
+            }
         }
-    }
-}
-
-private final class ViewModel: ObservableObject {
-    @Published var showsFilters = false
-    @Published var selectedOption: DateFilterOption = .all
-    var cancellable: AnyCancellable!
-    
-    init() {
-        self.cancellable = $selectedOption.sink { [weak self] _ in
+        .onChange(of: selectedOption) { newValue in
             withAnimation {
-                self?.showsFilters = false
+                self.showsFilters = false
             }
         }
     }
@@ -42,7 +36,7 @@ private final class ViewModel: ObservableObject {
 
 struct Previews_Deductions_Filter_View: PreviewProvider {
     static var previews: some View {
-        DeductionsFilterView().preferredColorScheme(.light)
-        DeductionsFilterView().preferredColorScheme(.dark)
+        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.light)
+        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.dark)
     }
 }
