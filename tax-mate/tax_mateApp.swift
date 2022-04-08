@@ -28,6 +28,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 struct tax_mateApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State var isPresented = true
     
     var body: some Scene {
         WindowGroup {

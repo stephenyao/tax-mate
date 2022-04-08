@@ -10,23 +10,23 @@ import SwiftUI
 import Combine
 
 struct DeductionsFilterView: View {
-    @Binding var selectedOption: DateFilterOption
+    @Binding var dateFilter: DateFilterData
     @State private var showsFilters = false
     
     var body: some View {
         Group {
             if !showsFilters {
-                DeductionsFilterSummary(selectionOption: selectedOption)
+                DeductionsFilterSummary(selectionOption: self.dateFilter.selectedOption)
                     .onTapGesture {
                         withAnimation {
                             self.showsFilters = true
                         }
                     }
             } else {
-                DateFilterView(selected: $selectedOption)
+                DateFilterView(data: $dateFilter)
             }
         }
-        .onChange(of: selectedOption) { newValue in
+        .onChange(of: dateFilter.selectedOption) { newValue in
             withAnimation {
                 self.showsFilters = false
             }
@@ -34,9 +34,9 @@ struct DeductionsFilterView: View {
     }
 }
 
-struct Previews_Deductions_Filter_View: PreviewProvider {
-    static var previews: some View {
-        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.light)
-        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.dark)
-    }
-}
+//struct Previews_Deductions_Filter_View: PreviewProvider {
+//    static var previews: some View {
+//        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.light)
+//        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.dark)
+//    }
+//}

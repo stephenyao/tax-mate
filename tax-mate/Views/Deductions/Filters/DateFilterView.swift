@@ -14,17 +14,52 @@ enum DateFilterOption: String, CaseIterable {
     case custom = "Custom Range"
 }
 
-struct DateFilterView: View {
-    @Binding var selected: DateFilterOption
+struct DateFilterData {
+    var from: Date?
+    var to: Date?
+    
+    var selectedOption: DateFilterOption {
+        didSet {
+            switch selectedOption {
+                case .all:
+                    self.from = nil
+                    self.to = nil
+                case .last30:
+                    self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
+                    self.to = nil
+                case .last90:
+                    self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
+                    self.to = nil
+                default: break
+            }
+        }
+    }
+}
 
+struct DateFilterView: View {
+    @Binding var data: DateFilterData
+    @State var presentDatePicker = false
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(DateFilterOption.allCases, id: \.rawValue) { option in
-                    Pill(selected: self.selected == option, action: { self.selected = option }, label: { Text(option.rawValue) })
+                    switch option {
+                        case .custom:
+                            Pill(selected: self.data.selectedOption == option) {
+                                self.presentDatePicker = true
+                            } label: {
+                                Text(option.rawValue)
+                            }
+                        default:
+                            Pill(selected: self.data.selectedOption == option, action: { self.data.selectedOption = option }, label: { Text(option.rawValue) })
+                    }
                 }
             }
             .font(.footnote)
+        }
+        .bottomSheet(isPresented: $presentDatePicker) {
+            Text("Bottom sheet content")
         }
     }
 }
@@ -50,8 +85,15 @@ private struct Pill<Content: View>: View {
     }
 }
 
+struct DummyFilterView: View {
+    @State private var filterData = DateFilterData(selectedOption: .all)
+    var body: some View {
+        DateFilterView(data: $filterData)
+    }
+}
+
 struct Previews_DateFilterVieww_Previews: PreviewProvider {
-    static var previews: some View {        
-        DateFilterView(selected: .constant(.all)).preferredColorScheme(.dark)
+    static var previews: some View {
+        DummyFilterView()
     }
 }
