@@ -7,14 +7,14 @@
 
 import Foundation
 import SwiftUI
-import Introspect
 
-struct BottomSheet<Content: View>: View {
+struct BottomSheetView<Content: View>: View {
     @Binding var isPresented: Bool
     @ViewBuilder var content: () -> Content
+    var onDismiss: (() -> Void)?
     @State private var opacity: Double = 0
     @State private var offset: Double = 250
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.black.opacity(opacity)
@@ -29,29 +29,47 @@ struct BottomSheet<Content: View>: View {
                 .foregroundColor(.white)
                 .frame(height: 250)
                 .frame(maxWidth: .infinity)
+                .overlay(content: content)
                 .offset(y: offset)
-                .overlay {
-                    self.content().opacity(self.opacity)
-                }
         }
         .ignoresSafeArea()
+        .background(.clear)
         .onAppear {
             withAnimation(.easeOut) {
                 self.opacity = 0.75
                 self.offset = 0
             }
         }
-        .background(Color.red)
     }
 }
 
 extension View {
+    var keyWindow: UIWindow {
+        UIApplication
+        .shared
+        .connectedScenes
+        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+        .first { $0.isKeyWindow }!
+    }
+    
     public func bottomSheet<A>(isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> A) -> some View where A : View {
-        return ZStack {
-            self
-            if isPresented.wrappedValue {
-                BottomSheet(isPresented: isPresented, content: content)
+        if !isPresented.wrappedValue {
+            if let root = keyWindow.rootViewController {
+                UIView.animate(withDuration: 0.3) {
+                    root.presentedViewController?.view.alpha = 0
+                } completion: { _  in
+                    root.presentedViewController?.dismiss(animated: false, completion: nil)
+                }
             }
+            return self
+        } else {
+            if let root = keyWindow.rootViewController {
+                let bottomSheetViewController = UIHostingController(rootView: BottomSheetView(isPresented: isPresented, content: content))
+                bottomSheetViewController.view.backgroundColor = .clear
+                bottomSheetViewController.modalPresentationStyle = .custom
+                root.present(bottomSheetViewController, animated: false, completion: nil)
+            }
+            return self
         }
     }
 }

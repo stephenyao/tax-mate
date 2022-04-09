@@ -38,7 +38,7 @@ struct DateFilterData {
 
 struct DateFilterView: View {
     @Binding var data: DateFilterData
-    @State var presentDatePicker = false
+    @State var presentDatePicker = false    
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -59,7 +59,7 @@ struct DateFilterView: View {
             .font(.footnote)
         }
         .bottomSheet(isPresented: $presentDatePicker) {
-            Text("Bottom sheet content")
+            Text("Dates")
         }
     }
 }
