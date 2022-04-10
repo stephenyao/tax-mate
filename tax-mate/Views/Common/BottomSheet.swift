@@ -14,6 +14,10 @@ struct BottomSheetView<Content: View>: View {
     var onDismiss: (() -> Void)?
     @State private var opacity: Double = 0
     @State private var offset: Double = 250
+    
+    private var backgroundColor: Color {
+        Color(uiColor: UIColor.systemBackground)
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,8 +30,9 @@ struct BottomSheetView<Content: View>: View {
                     }
                 }
             Rectangle()
+                .shadow(radius: 25.0)
                 .cornerRadius(25, corners: [.topLeft, .topRight])
-                .foregroundColor(.white)
+                .foregroundColor(backgroundColor)
                 .frame(height: 250)
                 .frame(maxWidth: .infinity)
                 .overlay(content: content)

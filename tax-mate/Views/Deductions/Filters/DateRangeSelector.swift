@@ -17,9 +17,10 @@ struct DateRangeSelector: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            Spacer().frame(height: 8)
             Text("Select Date Range")
                 .font(.body)
-                .fontWeight(.semibold)            
+                .fontWeight(.semibold)
             DatePicker("From", selection: $from, displayedComponents: .date)
             DatePicker("To", selection: $to, displayedComponents: .date)
             Spacer()
@@ -37,6 +38,7 @@ struct DateRangeSelector: View {
                     .frame(height: 34)
             }
             .buttonStyle(.borderedProminent)
+            .padding([.bottom])
         }
         .padding()
         .onAppear {
