@@ -27,7 +27,7 @@ struct DateFilterData {
     
     private var formatter: DateFormatter {
        let f = DateFormatter()
-        f.dateStyle = .short
+        f.dateStyle = .medium
         return f
     }
     
