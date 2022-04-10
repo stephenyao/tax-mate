@@ -53,7 +53,7 @@ struct DeductionsListView: View {
 
 private struct DummyDeductionsListView: View {
     @Namespace var namespace
-    @State private var filter = DateFilterData(from: nil, to: nil, selectedOption: .all)
+    @State private var filter = DateFilterData(selectedOption: .all)
     @State private var searching = false
     
     var body: some View {

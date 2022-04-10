@@ -64,6 +64,9 @@ extension View {
             return self
         } else {
             if let root = keyWindow.rootViewController {
+                guard root.presentedViewController == nil else {
+                    return self
+                }                
                 let bottomSheetViewController = UIHostingController(rootView: BottomSheetView(isPresented: isPresented, content: content))
                 bottomSheetViewController.view.backgroundColor = .clear
                 bottomSheetViewController.modalPresentationStyle = .custom

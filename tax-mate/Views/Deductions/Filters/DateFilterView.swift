@@ -15,21 +15,21 @@ enum DateFilterOption: String, CaseIterable {
 }
 
 struct DateFilterData {
-    var from: Date?
-    var to: Date?
+    var from: Date = .init(timeIntervalSinceReferenceDate: 0)
+    var to: Date = .now
     
     var selectedOption: DateFilterOption {
         didSet {
             switch selectedOption {
                 case .all:
-                    self.from = nil
-                    self.to = nil
+                    self.from = .init(timeIntervalSinceReferenceDate: 0)
+                    self.to = .now
                 case .last30:
                     self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
-                    self.to = nil
+                    self.to = .now
                 case .last90:
                     self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
-                    self.to = nil
+                    self.to = .now
                 default: break
             }
         }
@@ -38,7 +38,7 @@ struct DateFilterData {
 
 struct DateFilterView: View {
     @Binding var data: DateFilterData
-    @State var presentDatePicker = false    
+    @State var presentDatePicker = false
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -59,7 +59,17 @@ struct DateFilterView: View {
             .font(.footnote)
         }
         .bottomSheet(isPresented: $presentDatePicker) {
-            Text("Dates")
+            VStack {
+                DatePicker("From", selection: $data.from, displayedComponents: .date)
+                DatePicker("To", selection: $data.to, displayedComponents: .date)
+                Button(action: {
+                    self.data.selectedOption = .custom
+                    self.presentDatePicker = false
+                }) {
+                    Text("Apply")
+                }
+            }
+            .padding()
         }
     }
 }

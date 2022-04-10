@@ -12,7 +12,7 @@ struct DeductionsView: View {
     @Namespace var namespace
     @State var isSearching = false
     @State var searchQuery = ""
-    @State var dateFilter = DateFilterData(from: nil, to: nil, selectedOption: .all)
+    @State var dateFilter = DateFilterData(selectedOption: .all)
     
     var body: some View {
         if isSearching {
