@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct DeductionsFilterSummary: View {
-    let selectionOption: DateFilterOption
+    let data: DateFilterData
     
     private var backgroundColor: Color {
         Color(UIColor.systemGray6)
     }
     
+    private var filterSummaryText: String {
+        switch data.selectedOption {
+            case .custom: return data.dateRangeText
+            default: return data.selectedOption.rawValue
+        }
+    }
+    
     var body: some View {
         HStack {
-            Text("Showing: \(selectionOption.rawValue)")
+            Text("Showing: \(filterSummaryText)")
                 .font(.footnote)
                 .fontWeight(.semibold)
             Image(systemName: "chevron.right")

@@ -7,18 +7,31 @@
 
 import SwiftUI
 
-enum DateFilterOption: String, CaseIterable {
-    case all = "All time"
-    case last30 = "Last 30"
-    case last90 = "Last 90"
-    case custom = "Custom Range"
-}
-
 struct DateFilterData {
+    enum Option: String, CaseIterable {
+        case all = "All time"
+        case last30 = "Last 30"
+        case last90 = "Last 90"
+        case custom = "Custom Range"
+    }
+    
     var from: Date = .init(timeIntervalSinceReferenceDate: 0)
     var to: Date = .now
     
-    var selectedOption: DateFilterOption {
+    var dateRangeText: String {
+        return
+            """
+             \(formatter.string(from: from)) - \(formatter.string(from: to))
+            """
+    }
+    
+    private var formatter: DateFormatter {
+       let f = DateFormatter()
+        f.dateStyle = .short
+        return f
+    }
+    
+    var selectedOption: Option {
         didSet {
             switch selectedOption {
                 case .all:
@@ -43,7 +56,7 @@ struct DateFilterView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(DateFilterOption.allCases, id: \.rawValue) { option in
+                ForEach(DateFilterData.Option.allCases, id: \.rawValue) { option in
                     switch option {
                         case .custom:
                             Pill(selected: self.data.selectedOption == option) {

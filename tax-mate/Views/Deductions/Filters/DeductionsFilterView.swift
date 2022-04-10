@@ -16,7 +16,7 @@ struct DeductionsFilterView: View {
     var body: some View {
         Group {
             if !showsFilters {
-                DeductionsFilterSummary(selectionOption: self.dateFilter.selectedOption)
+                DeductionsFilterSummary(data: dateFilter)
                     .onTapGesture {
                         withAnimation {
                             self.showsFilters = true
@@ -33,10 +33,3 @@ struct DeductionsFilterView: View {
         }
     }
 }
-
-//struct Previews_Deductions_Filter_View: PreviewProvider {
-//    static var previews: some View {
-//        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.light)
-//        DeductionsFilterView(selectedOption: .constant(.all)).preferredColorScheme(.dark)
-//    }
-//}
