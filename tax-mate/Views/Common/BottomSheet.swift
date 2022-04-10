@@ -25,7 +25,8 @@ struct BottomSheetView<Content: View>: View {
                         self.isPresented.toggle()
                     }
                 }
-            RoundedRectangle(cornerRadius: 25.0)
+            Rectangle()
+                .cornerRadius(25, corners: [.topLeft, .topRight])
                 .foregroundColor(.white)
                 .frame(height: 250)
                 .frame(maxWidth: .infinity)
