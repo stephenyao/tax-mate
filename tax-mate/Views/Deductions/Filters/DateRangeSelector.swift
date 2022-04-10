@@ -14,7 +14,7 @@ struct DateRangeSelector: View {
     @Binding var showsFilters: Bool
     @State var from: Date = .init(timeIntervalSinceReferenceDate: 0)
     @State var to: Date = .now
-    
+
     var body: some View {
         VStack {
             DatePicker("From", selection: $from, displayedComponents: .date)
@@ -32,6 +32,12 @@ struct DateRangeSelector: View {
             }
         }
         .padding()
+        .onAppear {
+            if self.dateFilter.selectedOption == .custom {
+                self.from = self.dateFilter.from
+                self.to = self.dateFilter.to
+            }
+        }
     }
 }
 
