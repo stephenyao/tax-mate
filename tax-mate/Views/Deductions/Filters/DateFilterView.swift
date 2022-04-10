@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DateFilterView: View {
     @Binding var data: DateFilterData
+    @Binding var showsFilters: Bool
     @State var presentDatePicker = false
     
     var body: some View {
@@ -23,22 +24,28 @@ struct DateFilterView: View {
                                 Text(option.rawValue)
                             }
                         default:
-                            Pill(selected: self.data.selectedOption == option, action: { self.data.selectedOption = option }, label: { Text(option.rawValue) })
+                            Pill(selected: self.data.selectedOption == option, action: {
+                                withAnimation {
+                                    self.data.selectedOption = option                               
+                                    self.showsFilters = false
+                                }
+                            }, label: { Text(option.rawValue) })
                     }
                 }
             }
             .font(.footnote)
         }
         .bottomSheet(isPresented: $presentDatePicker) {
-            DateRangeSelector(dateFilter: $data, isPresented: $presentDatePicker)
+            DateRangeSelector(dateFilter: $data, isPresented: $presentDatePicker, showsFilters: $showsFilters)
         }
     }
 }
 
 struct DummyFilterView: View {
     @State private var filterData = DateFilterData(selectedOption: .all)
+    @State private var showsFilters = true
     var body: some View {
-        DateFilterView(data: $filterData)
+        DateFilterView(data: $filterData, showsFilters: $showsFilters)
     }
 }
 

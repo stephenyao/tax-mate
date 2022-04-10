@@ -23,12 +23,7 @@ struct DeductionsFilterView: View {
                         }
                     }
             } else {
-                DateFilterView(data: $dateFilter)
-            }
-        }
-        .onChange(of: dateFilter.selectedOption) { newValue in
-            withAnimation {
-                self.showsFilters = false
+                DateFilterView(data: $dateFilter, showsFilters: $showsFilters)
             }
         }
     }
