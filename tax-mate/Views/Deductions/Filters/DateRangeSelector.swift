@@ -16,9 +16,13 @@ struct DateRangeSelector: View {
     @State var to: Date = .now
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("Select Date Range")
+                .font(.body)
+                .fontWeight(.semibold)            
             DatePicker("From", selection: $from, displayedComponents: .date)
             DatePicker("To", selection: $to, displayedComponents: .date)
+            Spacer()
             Button(action: {
                 withAnimation {
                     self.dateFilter.selectedOption = .custom
@@ -29,7 +33,10 @@ struct DateRangeSelector: View {
                 }
             }) {
                 Text("Apply")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 34)
             }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
         .onAppear {
@@ -38,5 +45,12 @@ struct DateRangeSelector: View {
                 self.to = self.dateFilter.to
             }
         }
+    }
+}
+
+struct Previews_DateRangeSelector_Previews: PreviewProvider {
+    static var previews: some View {
+        DateRangeSelector(dateFilter: .constant(DateFilterData(selectedOption: .custom)), isPresented: .constant(true), showsFilters: .constant(true))
+            .frame(height: 250)
     }
 }
