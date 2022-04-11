@@ -26,8 +26,8 @@ struct DateFilterView: View {
                         default:
                             Pill(selected: self.data.selectedOption == option, action: {
                                 withAnimation {
-                                    self.data.selectedOption = option                               
                                     self.showsFilters = false
+                                    self.data.selectedOption = option
                                 }
                             }, label: { Text(option.rawValue) })
                     }

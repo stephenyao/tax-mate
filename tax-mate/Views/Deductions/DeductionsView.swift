@@ -12,13 +12,12 @@ struct DeductionsView: View {
     @Namespace var namespace
     @State var isSearching = false
     @State var searchQuery = ""
-    @State var dateFilter = DateFilterData(selectedOption: .all)
     
     var body: some View {
         if isSearching {
             SearchDeductionsView(namespace: namespace, isSearching: $isSearching)
         } else {
-            DeductionsListView(dateFilter: $dateFilter, isSearching: $isSearching, namespace: namespace)
+            DeductionsListView(isSearching: $isSearching, namespace: namespace)
         }
     }
 }

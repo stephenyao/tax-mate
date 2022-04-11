@@ -19,6 +19,7 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
     private var controller: NSFetchedResultsController<ManagedDeduction>!
     private let pageSize: Int = 25
     private var currentPage: Int = 1
+    private var predicate: NSPredicate?
 
     init(persistence: PersistenceController = PersistenceController.shared) {
         self.subject = CurrentValueSubject([])
@@ -27,10 +28,19 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
         loadNext()
     }
     
+    func reload(dateRange: (Date, Date)?) {
+        currentPage = 1
+        if let range = dateRange {
+            predicate = NSPredicate(format: "date >= %@ AND date <= %@", argumentArray: [range.0 as CVarArg, range.1 as CVarArg])
+        }
+        loadNext()
+    }
+    
     func loadNext() {
         let context = persistence.container.viewContext
         let fetchRequest = ManagedDeduction.fetchRequest()
         fetchRequest.fetchLimit = pageSize * currentPage
+        fetchRequest.predicate = predicate
         
         // Configure the request's entity, and optionally its predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
@@ -52,7 +62,9 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
     
     func hasNext() -> Bool {
         let context = persistence.container.viewContext
-        let totalCount = (try? context.count(for: ManagedDeduction.fetchRequest())) ?? 0
+        let fetchRequest = ManagedDeduction.fetchRequest()
+        fetchRequest.predicate = predicate
+        let totalCount = (try? context.count(for: fetchRequest)) ?? 0
         let fetchedCount = controller.fetchedObjects?.count ?? 0
         return totalCount != fetchedCount
     }

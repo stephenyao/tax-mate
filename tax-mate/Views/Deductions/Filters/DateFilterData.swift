@@ -41,7 +41,7 @@ struct DateFilterData {
                     self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
                     self.to = .now
                 case .last90:
-                    self.from = .init(timeIntervalSinceNow: -30 * 24 * 3600)
+                    self.from = .init(timeIntervalSinceNow: -90 * 24 * 3600)
                     self.to = .now
                 default: break
             }

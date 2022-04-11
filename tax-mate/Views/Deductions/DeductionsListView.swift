@@ -13,31 +13,45 @@ struct DeductionsListView: View {
     )
     @State private var showsAddDeductions = false
     @State private var emptySearchQuery = ""
-    @Binding var dateFilter: DateFilterData
     @Binding var isSearching: Bool
     var namespace: Namespace.ID
     
-    var body: some View {        
+    var searchBar: some View {
+        SearchBar(query: $emptySearchQuery, isActive: $isSearching)
+            .listRowSeparator(.hidden)
+            .matchedGeometryEffect(id: "searchbar", in: namespace)
+    }
+    
+    var filters: some View {
+        DeductionsFilterView(dateFilter: $viewModel.filterData)
+            .listRowSeparator(.hidden)
+    }
+    
+    var rows: some View {
+        ForEach(viewModel.deductionsGroup, id: \.date) { group in
+            Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
+                ForEach(group.deductions) { deduction in
+                    NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
+                }
+            }
+        }
+    }
+    
+    var nextLoading: some View {
+        Text("Loading...")
+            .onAppear {
+                self.viewModel.loadNext()
+            }
+    }
+    
+    var body: some View {
         NavigationView {
             List {
-                SearchBar(query: $emptySearchQuery, isActive: $isSearching)
-                    .listRowSeparator(.hidden)
-                    .matchedGeometryEffect(id: "searchbar", in: namespace)
-                DeductionsFilterView(dateFilter: $dateFilter)
-                    .listRowSeparator(.hidden)
-                ForEach(viewModel.deductionsGroup, id: \.date) { group in
-                    Section(header: Text(viewModel.displayString(for: group.date)).foregroundColor(.theme)) {
-                        ForEach(group.deductions) { deduction in
-                            NavigationLink(deduction.name, destination: DeductionDetailsView(deduction: deduction))
-                        }
-                    }
-                }
-
+                searchBar
+                filters
+                rows                
                 if viewModel.hasNext() {
-                    Text("Loading...")
-                        .onAppear {
-                            self.viewModel.loadNext()
-                        }
+                    nextLoading
                 }
             }
             .listStyle(.plain)
@@ -57,7 +71,7 @@ private struct DummyDeductionsListView: View {
     @State private var searching = false
     
     var body: some View {
-        DeductionsListView(dateFilter: $filter, isSearching: $searching, namespace: namespace)
+        DeductionsListView(isSearching: $searching, namespace: namespace)
     }
 }
 
