@@ -17,6 +17,7 @@ struct SecondaryButton: View {
     Button(action: action) {
       Text(title)
         .fontWeight(.semibold)
+        .foregroundColor(.theme)
         .padding()
         .frame(height: 37.0)
     }

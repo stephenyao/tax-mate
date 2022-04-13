@@ -20,6 +20,9 @@ struct AddDeductionsView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
+                    VStack {                        
+                        ImagePickerButton(image: $image)
+                    }
                     VStack {
                         HStack {
                             Text("Name")
@@ -44,10 +47,6 @@ struct AddDeductionsView: View {
                             DatePicker("Date", selection: $date, displayedComponents: .date)
                         }
                     }
-                    
-                    VStack {
-                        ImagePickerButton(image: $image)
-                    }
                 }
                 .padding()
                 
@@ -59,6 +58,12 @@ struct AddDeductionsView: View {
                 .padding([.bottom])
             }
             .navigationTitle("New Deduction")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    CloseButton(showsModal: $showsModal)
+                }
+            }
         }
     }
 }

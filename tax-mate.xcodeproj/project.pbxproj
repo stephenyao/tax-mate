@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD2A5BBB27DF67CD001E7500 /* MoreActionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */; };
+		DD4D172E280796F4007B2D76 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D172D280796F4007B2D76 /* CloseButton.swift */; };
 		DD55C15527F4595B003D05EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15427F4595B003D05EE /* Colors.swift */; };
 		DD55C15727F46401003D05EE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15627F46401003D05EE /* SearchBar.swift */; };
 		DD6848002802897500D7211B /* DateFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6847FF2802897500D7211B /* DateFilterData.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		DD2A5BBA27DF67CD001E7500 /* MoreActionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActionsButton.swift; sourceTree = "<group>"; };
+		DD4D172D280796F4007B2D76 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DD55C15427F4595B003D05EE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DD55C15627F46401003D05EE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DD6847FF2802897500D7211B /* DateFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterData.swift; sourceTree = "<group>"; };
@@ -152,7 +154,6 @@
 				DDBC5EFF27BE4D5B00FAD85F /* Database */,
 				DDBC5EFE27BE4D4F00FAD85F /* Views */,
 				DDBC5EFB27BDDB3900FAD85F /* Model */,
-				DDBC5EF827BDD9E500FAD85F /* Repository */,
 				DDBC5EC027BD276300FAD85F /* Assets.xcassets */,
 				DDBC5EBC27BD276200FAD85F /* tax_mateApp.swift */,
 				DDBC5EC727BD276300FAD85F /* tax_mate.xcdatamodeld */,
@@ -199,6 +200,7 @@
 		DDBC5EFB27BDDB3900FAD85F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDBC5EF827BDD9E500FAD85F /* Repository */,
 				DDBC5EFC27BDDB4300FAD85F /* Deduction.swift */,
 				DDBF6EBE27EF22900029DA8B /* DeductionGroup.swift */,
 			);
@@ -228,6 +230,7 @@
 		DDBC5F0527BE57D400FAD85F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DD4D172D280796F4007B2D76 /* CloseButton.swift */,
 				DDBC5F0627BE57E900FAD85F /* PresentModalButton.swift */,
 				DDBC5F0A27BFAA4800FAD85F /* UIImage+Utils.swift */,
 				DDBC5F0C27BFAAC300FAD85F /* ImagePicker.swift */,
@@ -405,6 +408,7 @@
 				DDF2202A27F71F110065C794 /* DeductionsFilterView.swift in Sources */,
 				DDBC5F0127BE4D8D00FAD85F /* SeedDb.swift in Sources */,
 				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
+				DD4D172E280796F4007B2D76 /* CloseButton.swift in Sources */,
 				DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */,
 				DDF6A48B27C252E30012131B /* Assign.swift in Sources */,
 				DDBC5F0727BE57E900FAD85F /* PresentModalButton.swift in Sources */,
