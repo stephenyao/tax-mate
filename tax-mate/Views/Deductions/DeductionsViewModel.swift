@@ -10,7 +10,7 @@ import Combine
 
 final class DeductionsViewModel: ObservableObject {
     @Published var deductionsGroup: [DeductionsGroup] = []
-    @Published var filterData: DateFilterData = DateFilterData.init(selectedOption: .all)    
+    @Published var filterData: DateFilterData = DateFilterData.init(selectedOption: .all)
     private var deductions: [Deduction] = []
     
     private let pagingObserver: DeductionsPagingObserver
@@ -22,7 +22,7 @@ final class DeductionsViewModel: ObservableObject {
     }()
     
     init(
-        pagingObserver: DeductionsPagingObserver        
+        pagingObserver: DeductionsPagingObserver
     ) {
         self.pagingObserver = pagingObserver
         pagingObserver.entityChangedPublisher.sink { [weak self] in
@@ -31,14 +31,15 @@ final class DeductionsViewModel: ObservableObject {
         }
         .store(in: &cancellables)
         
-        $filterData.sink { _ in
-            fatalError("Stream should never end")
-        } receiveValue: { data in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                pagingObserver.reload(dateRange: (data.from, data.to))
+        $filterData
+            .sink { _ in
+                fatalError("Stream should never end")
+            } receiveValue: { data in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    pagingObserver.reload(dateRange: (data.from, data.to))
+                }
             }
-        }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
     }
     
     func displayString(for date: Date) -> String {
