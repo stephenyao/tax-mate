@@ -20,9 +20,10 @@ struct AddDeductionsView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    VStack {                        
-                        ImagePickerButton(image: $image)
+                    VStack {
+                        ImagePickerButton(image: $image)                            
                     }
+                    .padding()
                     VStack {
                         HStack {
                             Text("Name")

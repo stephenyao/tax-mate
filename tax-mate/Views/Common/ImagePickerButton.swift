@@ -16,14 +16,26 @@ struct ImagePickerButton: View {
     var body: some View {
         HStack {
             if let image = self.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(minWidth: 0, maxWidth: 120)
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                        self.showingActions = true
-                    }
+                ZStack(alignment: .topLeading) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                self.showingActions = true
+                            }
+                        Button(action: { self.image = nil }) {
+                            Image(systemName: "xmark")
+                                .renderingMode(.template)
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(Circle().foregroundColor(.black))
+                        }
+                    
+                        .offset(x: -13, y: -13)
+                }
+                .frame(width: 120, height: 360)
+                .background(Color.red)
             } else {
                 Button {
                     showingActions = true
