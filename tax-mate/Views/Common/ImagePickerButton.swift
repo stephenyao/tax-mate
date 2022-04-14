@@ -14,28 +14,29 @@ struct ImagePickerButton: View {
     @Binding var image: UIImage?
     
     var body: some View {
-        HStack {
+        Group {
             if let image = self.image {
                 ZStack(alignment: .topLeading) {
                         Image(uiImage: image)
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
                             .edgesIgnoringSafeArea(.all)
                             .onTapGesture {
                                 self.showingActions = true
                             }
                         Button(action: { self.image = nil }) {
                             Image(systemName: "xmark")
+                                .resizable()
                                 .renderingMode(.template)
                                 .foregroundColor(.white)
-                                .padding(5)
+                                .frame(width: 11, height: 11)
+                                .padding(3)
                                 .background(Circle().foregroundColor(.black))
                         }
                     
-                        .offset(x: -13, y: -13)
+                        .offset(x: -7, y: -7)
                 }
-                .frame(width: 120, height: 360)
-                .background(Color.red)
+                .frame(maxHeight: 250)
             } else {
                 Button {
                     showingActions = true
