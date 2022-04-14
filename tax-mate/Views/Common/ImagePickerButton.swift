@@ -25,15 +25,20 @@ struct ImagePickerButton: View {
                         self.showingActions = true
                     }
             } else {
-                VStack {
-                    Image(systemName: "doc.text.image")
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundColor(.theme)
-                        .frame(width: 44, height: 44)
-                    SecondaryButton(title: "Add photo") {
-                        showingActions = true
+                Button {
+                    showingActions = true
+                } label: {
+                    VStack {
+                        Image(systemName: "doc.text.image")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.theme)
+                            .frame(width: 44, height: 44)
+                        
+                        Text("Add photo")
+                            .fontWeight(.semibold)
                     }
+                    .foregroundColor(.theme)
                 }
             }
         }
