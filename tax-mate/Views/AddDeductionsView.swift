@@ -24,39 +24,26 @@ struct AddDeductionsView: View {
                         ImagePickerButton(image: $image)                            
                     }
                     .padding()
-                    VStack {
-                        HStack {
-                            Text("Name")
-                            Spacer()
-                            TextField("Name", text: $name)
-                                .multilineTextAlignment(.trailing)
-                        }
-                    }
+                    FormInputRow(text: $name, inputTitle: "Name")
+                    FormInputRow(text: $cost, inputTitle: "Cost")
+                    FormInputDateRow(date: $date, inputTitle: "Date")
                     
-                    VStack {
-                        HStack {
-                            Text("Cost")
-                            Spacer()
-                            TextField("Cost", text: $cost)
-                                .keyboardType(.decimalPad)
-                                .multilineTextAlignment(.trailing)
-                        }
+                    Button {
+                        let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
+                        repository.insert(deduction: deduction)
+                        showsModal = false
+                    } label: {
+                        Text("Save")
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
                     }
-                    
-                    VStack {
-                        HStack {
-                            DatePicker("Date", selection: $date, displayedComponents: .date)
-                        }
-                    }
+                    .padding([.top, .bottom])
+                    .buttonStyle(.borderedProminent)
                 }
+                .foregroundColor(.theme)
                 .padding()
                 
-                Button("Save") {
-                    let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
-                    repository.insert(deduction: deduction)
-                    showsModal = false
-                }
-                .padding([.bottom])
+              
             }
             .navigationTitle("New Deduction")
             .navigationBarTitleDisplayMode(.inline)
