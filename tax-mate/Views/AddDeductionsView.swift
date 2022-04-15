@@ -12,9 +12,9 @@ struct AddDeductionsView: View {
     @State private var cost: String = ""
     @State private var date: Date = .now.startOfDay()
     @State private var image: UIImage?
-    @Binding var showsModal: Bool
-    
     private let repository = DeductionsRepository()
+
+    @Binding var showsModal: Bool    
     
     var body: some View {
         NavigationView {
