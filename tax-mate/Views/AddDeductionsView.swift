@@ -22,8 +22,7 @@ struct AddDeductionsView: View {
                 ScrollView {
                     ImagePickerButton(image: $image)
                         .padding()
-                    FormInputRow(text: $name, inputTitle: "Name")
-                        .focused($focused)
+                    FormInputRow(text: $name, inputTitle: "Name")                        
                     FormInputRow(text: $cost, inputTitle: "Cost")
                     FormInputDateRow(date: $date, inputTitle: "Date")
                     
