@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AddDeductionsView: View {
-    @State var name: String = ""
-    @State var cost: String = ""
-    @State var date: Date = .now.startOfDay()
-    @State var image: UIImage?
+    @State private var name: String = ""
+    @State private var cost: String = ""
+    @State private var date: Date = .now.startOfDay()
+    @State private var image: UIImage?
     @Binding var showsModal: Bool
     
     private let repository = DeductionsRepository()
