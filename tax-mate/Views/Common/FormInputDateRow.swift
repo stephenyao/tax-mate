@@ -21,7 +21,6 @@ struct FormInputDateRow: View {
         VStack {
             HStack {
                 Text(displayText)
-                    .foregroundColor(Color(uiColor: .systemGray))
                     .padding()
                 Spacer()
             }

@@ -26,10 +26,7 @@ struct AddDeductionsView: View {
                     FormInputRow(text: $cost, inputTitle: "Cost")
                     FormInputDateRow(date: $date, inputTitle: "Date")
                 }
-                .foregroundColor(.theme)
                 .padding()
-                
-              
             }
             .navigationTitle("New Deduction")
             .navigationBarTitleDisplayMode(.inline)
@@ -42,7 +39,7 @@ struct AddDeductionsView: View {
                         let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
                         repository.insert(deduction: deduction)
                         showsModal = false
-                    }                    
+                    }
                 }
             }
         }
