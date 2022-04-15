@@ -38,6 +38,7 @@ struct ImagePickerButton: View {
                         .offset(x: -7, y: -7)
                 }
                 .frame(maxHeight: 250)
+                .padding()
             } else {
                 Button {
                     self.action?()

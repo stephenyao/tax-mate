@@ -23,8 +23,9 @@ struct AddDeductionsView: View {
             ZStack(alignment: .bottom) {
                 ScrollView {
                     ImagePickerButton(image: $image) {
-                        self.focus = false
-                    }.padding()
+                        focus = false
+                    }
+                    Spacer().frame(height: 14)
                     FormInputRow(text: $name, inputTitle: "Name")
                         .focused($focus)
                     FormInputRow(text: $cost, inputTitle: "Cost")
