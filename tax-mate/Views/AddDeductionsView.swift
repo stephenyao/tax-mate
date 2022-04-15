@@ -22,21 +22,9 @@ struct AddDeductionsView: View {
                 ScrollView {
                     ImagePickerButton(image: $image)
                         .padding()
-                    FormInputRow(text: $name, inputTitle: "Name")                        
+                    FormInputRow(text: $name, inputTitle: "Name")
                     FormInputRow(text: $cost, inputTitle: "Cost")
                     FormInputDateRow(date: $date, inputTitle: "Date")
-                    
-                    Button {
-                        let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
-                        repository.insert(deduction: deduction)
-                        showsModal = false
-                    } label: {
-                        Text("Save")
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 44)
-                    }
-                    .padding([.top, .bottom])
-                    .buttonStyle(.borderedProminent)
                 }
                 .foregroundColor(.theme)
                 .padding()
@@ -48,6 +36,13 @@ struct AddDeductionsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     CloseButton(showsModal: $showsModal)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
+                        repository.insert(deduction: deduction)
+                        showsModal = false
+                    }                    
                 }
             }
         }
