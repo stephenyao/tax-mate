@@ -20,11 +20,10 @@ struct AddDeductionsView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    VStack {
-                        ImagePickerButton(image: $image)                            
-                    }
-                    .padding()
+                    ImagePickerButton(image: $image)
+                        .padding()
                     FormInputRow(text: $name, inputTitle: "Name")
+                        .focused($focused)
                     FormInputRow(text: $cost, inputTitle: "Cost")
                     FormInputDateRow(date: $date, inputTitle: "Date")
                     
