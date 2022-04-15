@@ -35,7 +35,7 @@ struct FormInputDateRow: View {
             }
             
             if presentPicker {
-                DatePicker("Date", selection: $date)
+                DatePicker("Date", selection: $date, displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .onChange(of: self.date) { _ in
                         withAnimation {                            

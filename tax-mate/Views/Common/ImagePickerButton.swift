@@ -12,6 +12,7 @@ struct ImagePickerButton: View {
     @State private var showingActions = false
     @State private var sourceType: UIImagePickerController.SourceType?
     @Binding var image: UIImage?
+    var action: (() -> Void)?
     
     var body: some View {
         Group {
@@ -39,6 +40,7 @@ struct ImagePickerButton: View {
                 .frame(maxHeight: 250)
             } else {
                 Button {
+                    self.action?()
                     showingActions = true
                 } label: {
                     VStack {

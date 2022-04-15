@@ -12,18 +12,23 @@ struct AddDeductionsView: View {
     @State private var cost: String = ""
     @State private var date: Date = .now.startOfDay()
     @State private var image: UIImage?
+    @FocusState private var focus: Bool
+    
     private let repository = DeductionsRepository()
 
-    @Binding var showsModal: Bool    
+    @Binding var showsModal: Bool
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    ImagePickerButton(image: $image)
-                        .padding()
+                    ImagePickerButton(image: $image) {
+                        self.focus = false
+                    }.padding()
                     FormInputRow(text: $name, inputTitle: "Name")
+                        .focused($focus)
                     FormInputRow(text: $cost, inputTitle: "Cost")
+                        .focused($focus)
                     FormInputDateRow(date: $date, inputTitle: "Date")
                 }
                 .padding()
