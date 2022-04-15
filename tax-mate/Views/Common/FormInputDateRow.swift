@@ -31,7 +31,7 @@ struct FormInputDateRow: View {
             )
             .onTapGesture {
                 withAnimation {
-                    presentPicker = true
+                    presentPicker.toggle()
                 }
             }
             
@@ -39,7 +39,7 @@ struct FormInputDateRow: View {
                 DatePicker("Date", selection: $date)
                     .datePickerStyle(.graphical)
                     .onChange(of: self.date) { _ in
-                        withAnimation {
+                        withAnimation {                            
                             presentPicker = false
                         }
                     }
