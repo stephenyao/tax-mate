@@ -10,7 +10,7 @@ import SwiftUI
 struct AddDeductionsView: View {
     @State var name: String = ""
     @State var cost: String = ""
-    @State var date: Date = .now
+    @State var date: Date = .now.startOfDay()
     @State var image: UIImage?
     @Binding var showsModal: Bool
     

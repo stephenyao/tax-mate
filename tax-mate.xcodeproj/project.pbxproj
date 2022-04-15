@@ -12,6 +12,7 @@
 		DD4D173028085673007B2D76 /* FormInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D172F28085673007B2D76 /* FormInput.swift */; };
 		DD4D17322808F3C3007B2D76 /* FormInputDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D17312808F3C3007B2D76 /* FormInputDateRow.swift */; };
 		DD4D173428092102007B2D76 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D173328092102007B2D76 /* Formatter.swift */; };
+		DD4D1736280929F5007B2D76 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D1735280929F5007B2D76 /* Date.swift */; };
 		DD55C15527F4595B003D05EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15427F4595B003D05EE /* Colors.swift */; };
 		DD55C15727F46401003D05EE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15627F46401003D05EE /* SearchBar.swift */; };
 		DD6848002802897500D7211B /* DateFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6847FF2802897500D7211B /* DateFilterData.swift */; };
@@ -71,6 +72,7 @@
 		DD4D172F28085673007B2D76 /* FormInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInput.swift; sourceTree = "<group>"; };
 		DD4D17312808F3C3007B2D76 /* FormInputDateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputDateRow.swift; sourceTree = "<group>"; };
 		DD4D173328092102007B2D76 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		DD4D1735280929F5007B2D76 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DD55C15427F4595B003D05EE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DD55C15627F46401003D05EE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DD6847FF2802897500D7211B /* DateFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterData.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				DDF6A48A27C252E30012131B /* Assign.swift */,
 				DD55C15427F4595B003D05EE /* Colors.swift */,
 				DD4D173328092102007B2D76 /* Formatter.swift */,
+				DD4D1735280929F5007B2D76 /* Date.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */,
 				DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */,
 				DD4D173428092102007B2D76 /* Formatter.swift in Sources */,
+				DD4D1736280929F5007B2D76 /* Date.swift in Sources */,
 				DDF2202227F4781D0065C794 /* SearchDeductionsView.swift in Sources */,
 				DDBC5EBD27BD276200FAD85F /* tax_mateApp.swift in Sources */,
 				DDBC5F0F27BFAAF100FAD85F /* ImagePickerButton.swift in Sources */,

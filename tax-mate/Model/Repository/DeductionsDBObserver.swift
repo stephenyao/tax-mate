@@ -40,6 +40,7 @@ final class DeductionsPagingObserver: NSObject, NSFetchedResultsControllerDelega
         let context = persistence.container.viewContext
         let fetchRequest = ManagedDeduction.fetchRequest()
         fetchRequest.fetchLimit = pageSize * currentPage
+        NSFetchedResultsController<NSFetchRequestResult>.deleteCache(withName: "Root")
         fetchRequest.predicate = predicate
         
         // Configure the request's entity, and optionally its predicate
