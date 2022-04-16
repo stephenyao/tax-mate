@@ -9,28 +9,28 @@ import SwiftUI
 
 struct AddDeductionsView: View {
     @State private var name: String = ""
-    @State private var cost: String = ""
     @State private var date: Date = .now.startOfDay()
     @State private var image: UIImage?
+    @State private var money: Double?
     @FocusState private var focus: Bool
-    
     private let repository = DeductionsRepository()
-
+    @StateObject private var viewModel = AddDeductionsViewModel()
+    
     @Binding var showsModal: Bool
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    ImagePickerButton(image: $image) {
+                    ImagePickerButton(image: $viewModel.image) {
                         focus = false
                     }
                     Spacer().frame(height: 14)
-                    FormInputRow(text: $name, inputTitle: "Name")
+                    FormInputRow(text: $viewModel.name, inputTitle: "Name")
                         .focused($focus)
-                    FormInputRow(text: $cost, inputTitle: "Cost")
+                    FormInputCurrencyRow(inputTitle: "$0.00", amount: $viewModel.cost, isActive: $focus)
                         .focused($focus)
-                    FormInputDateRow(date: $date, inputTitle: "Date")
+                    FormInputDateRow(date: $viewModel.date, inputTitle: "Date")
                 }
                 .padding()
             }
@@ -42,10 +42,10 @@ struct AddDeductionsView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        let deduction = Deduction(name: name, date: date, image: image, cost: Double(cost) ?? 0)
-                        repository.insert(deduction: deduction)
+                        viewModel.save()
                         showsModal = false
                     }
+                    .disabled(!viewModel.inputValid)
                 }
             }
         }
@@ -54,6 +54,6 @@ struct AddDeductionsView: View {
 
 struct AddDeductionsView_Previews: PreviewProvider {
     static var previews: some View {
-        AddDeductionsView(showsModal: .constant(true))        
+        AddDeductionsView(showsModal: .constant(true))
     }
 }

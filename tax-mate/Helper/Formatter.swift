@@ -15,4 +15,11 @@ final class Formatter {
         f.dateStyle = .medium
         return f
     }()
+    
+    lazy var currency: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .currency
+        f.maximumFractionDigits = 2
+        return f
+    }()
 }
