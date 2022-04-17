@@ -15,6 +15,7 @@
 		DD4D1736280929F5007B2D76 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D1735280929F5007B2D76 /* Date.swift */; };
 		DD4D1738280A49DD007B2D76 /* FormInputCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D1737280A49DD007B2D76 /* FormInputCurrency.swift */; };
 		DD4EEF2F280AF58300D16B54 /* AddDeductionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4EEF2E280AF58300D16B54 /* AddDeductionsViewModel.swift */; };
+		DD4EEF33280C392600D16B54 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = DD4EEF32280C392600D16B54 /* SwiftDate */; };
 		DD55C15527F4595B003D05EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15427F4595B003D05EE /* Colors.swift */; };
 		DD55C15727F46401003D05EE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55C15627F46401003D05EE /* SearchBar.swift */; };
 		DD6848002802897500D7211B /* DateFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6847FF2802897500D7211B /* DateFilterData.swift */; };
@@ -126,6 +127,7 @@
 			files = (
 				DDBC5F0427BE4DFE00FAD85F /* Fakery in Frameworks */,
 				DDF2202027F4761D0065C794 /* Introspect in Frameworks */,
+				DD4EEF33280C392600D16B54 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +320,7 @@
 			packageProductDependencies = (
 				DDBC5F0327BE4DFE00FAD85F /* Fakery */,
 				DDF2201F27F4761D0065C794 /* Introspect */,
+				DD4EEF32280C392600D16B54 /* SwiftDate */,
 			);
 			productName = "tax-mate";
 			productReference = DDBC5EB927BD276200FAD85F /* tax-mate.app */;
@@ -378,6 +381,7 @@
 				DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */,
 				DDBC5F0227BE4DFE00FAD85F /* XCRemoteSwiftPackageReference "Fakery" */,
 				DDF2201E27F4761D0065C794 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				DD4EEF31280C392600D16B54 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = DDBC5EBA27BD276200FAD85F /* Products */;
 			projectDirPath = "";
@@ -728,6 +732,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD4EEF31280C392600D16B54 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		DDBC5EEB27BD28F100FAD85F /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble";
@@ -763,6 +775,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD4EEF32280C392600D16B54 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD4EEF31280C392600D16B54 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
 		DDBC5EF427BD2C0F00FAD85F /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC5EEE27BD290D00FAD85F /* XCRemoteSwiftPackageReference "quick" */;

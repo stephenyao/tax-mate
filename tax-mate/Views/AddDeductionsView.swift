@@ -35,6 +35,7 @@ struct AddDeductionsView: View {
                     }
                 }
                 .padding()
+                .background(.black)
             }
             .navigationTitle("New Deduction")
             .navigationBarTitleDisplayMode(.inline)
