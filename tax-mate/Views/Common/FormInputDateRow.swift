@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import Introspect
 
 struct FormInputDateRow: View {
     @Binding var date: Date
     let inputTitle: String
+    var action: (() -> Void)?
     @State private var presentPicker = false        
     
     private var displayText: String {
@@ -30,6 +30,7 @@ struct FormInputDateRow: View {
             )
             .onTapGesture {
                 withAnimation {
+                    action?()
                     presentPicker.toggle()
                 }
             }
@@ -41,9 +42,6 @@ struct FormInputDateRow: View {
                         withAnimation {                            
                             presentPicker = false
                         }
-                    }
-                    .introspectDatePicker { picker in
-                        picker.becomeFirstResponder()
                     }
             }
         }

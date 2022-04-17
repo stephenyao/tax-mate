@@ -30,7 +30,9 @@ struct AddDeductionsView: View {
                         .focused($focus)
                     FormInputCurrencyRow(inputTitle: "$0.00", amount: $viewModel.cost, isActive: $focus)
                         .focused($focus)
-                    FormInputDateRow(date: $viewModel.date, inputTitle: "Date")
+                    FormInputDateRow(date: $viewModel.date, inputTitle: "Date") {
+                        focus = false
+                    }
                 }
                 .padding()
             }
