@@ -29,7 +29,7 @@ struct AddDeductionsView: View {
                         Spacer().frame(height: 14)
                         FormInputRow(text: $viewModel.name, inputTitle: "Name")
                             .focused($focus)
-                        FormInputCurrencyRow(inputTitle: "$0.00", amount: $viewModel.cost)
+                        FormInputCurrencyRow(amount: $viewModel.cost, inputTitle: "$0.00")
                             .focused($focus)
                         FormInputDateRow(date: $viewModel.date, inputTitle: "Date") {
                             focus = false

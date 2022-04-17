@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FormInputCurrencyRow: View {
-    let inputTitle: String
     @Binding var amount: Double?
+    let inputTitle: String
     
     var body: some View {
         TextField(inputTitle, value: $amount, format: .currency(code: Locale.current.currencyCode ?? "AUD"))
@@ -25,7 +25,7 @@ private struct Preview: View {
     @FocusState private var isActive: Bool
     
     var body: some View {
-        FormInputCurrencyRow(inputTitle: "$0.00", amount: $amount)
+        FormInputCurrencyRow(amount: $amount, inputTitle: "$0.00")
             .focused($isActive)
     }
 }
