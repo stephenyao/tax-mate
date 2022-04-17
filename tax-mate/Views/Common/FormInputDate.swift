@@ -10,8 +10,8 @@ import SwiftUI
 struct FormInputDate: View {
     @Binding var date: Date
     let inputTitle: String
-    var action: (() -> Void)?
     @Binding var presentPicker: Bool
+    var action: (() -> Void)?
     
     private var displayText: String {
         Formatter.sharedInstance.mediumDate.string(from: date)

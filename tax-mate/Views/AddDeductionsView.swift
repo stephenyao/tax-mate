@@ -11,7 +11,7 @@ struct AddDeductionsView: View {
     @State private var name: String = ""
     @State private var date: Date = .now.startOfDay()
     @State private var image: UIImage?
-    @State private var money: Double?
+    @State private var cost: Double?
     @State private var presentDatePicker = false
     @FocusState private var focus: Bool
     private let repository = DeductionsRepository()
@@ -19,24 +19,42 @@ struct AddDeductionsView: View {
     
     @Binding var showsModal: Bool
     
+    @ViewBuilder private var imagePicker: some View {
+        ImagePickerButton(image: $viewModel.image)
+            .simultaneousGesture(
+                TapGesture().onEnded {
+                    focus = false
+                }
+            )
+    }
+    
+    @ViewBuilder private var nameInput: some View {
+        FormInputText(text: $viewModel.name, inputTitle: "Name")
+            .focused($focus)
+    }
+    
+    @ViewBuilder private var costInput: some View {
+        FormInputCurrency(amount: $viewModel.cost, inputTitle: "$0.00")
+            .focused($focus)
+    }
+    
+    @ViewBuilder private var datePicker: some View {
+        FormInputDate(date: $viewModel.date, inputTitle: "Date", presentPicker: $presentDatePicker) {
+            focus = false 
+        }
+    }
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
                     Group {
-                        ImagePickerButton(image: $viewModel.image)
+                        imagePicker
                         Spacer().frame(height: 14)
-                        FormInputText(text: $viewModel.name, inputTitle: "Name")
-                            .focused($focus)
-                        FormInputCurrency(amount: $viewModel.cost, inputTitle: "$0.00")
-                            .focused($focus)
-                        FormInputDate(date: $viewModel.date, inputTitle: "Date", presentPicker: $presentDatePicker)
+                        nameInput
+                        costInput
+                        datePicker
                     }
-                    .simultaneousGesture(
-                        TapGesture().onEnded {
-                            focus = false
-                        }
-                    )
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
                             Spacer()
