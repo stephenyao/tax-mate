@@ -13,28 +13,27 @@ struct DeductionDetailsView: View {
     @State var presentDeleteAlert = false
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Name")
-                Spacer()
-                Text(deduction.name)
+        VStack() {
+            if let image = deduction.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 250)
             }
             
-            HStack {
+            VStack {
+                Text("Name")
+                Text(deduction.name)
+                    .fontWeight(.semibold)
+            }
+            
+            VStack {
                 Text("Cost")
-                Spacer()
                 Text("\(deduction.cost)")
             }
-            if let image = deduction.image {
-                HStack {
-                    Text("Image")
-                    Spacer()
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                }
-            }
+            Spacer()
         }
+
         .navigationBarItems(trailing: MoreActionsButton {
             Button("Delete deduction", role: .destructive) {
                 presentDeleteAlert = true
@@ -45,5 +44,7 @@ struct DeductionDetailsView: View {
                 repository.delete(deduction: deduction)
             }
         }
+        .navigationTitle("Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
