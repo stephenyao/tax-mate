@@ -22,16 +22,26 @@ struct AddDeductionsView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ScrollView {
-                    ImagePickerButton(image: $viewModel.image) {
-                        focus = false
+                    Group {
+                        ImagePickerButton(image: $viewModel.image) {
+                            focus = false
+                        }
+                        Spacer().frame(height: 14)
+                        FormInputRow(text: $viewModel.name, inputTitle: "Name")
+                            .focused($focus)
+                        FormInputCurrencyRow(inputTitle: "$0.00", amount: $viewModel.cost)
+                            .focused($focus)
+                        FormInputDateRow(date: $viewModel.date, inputTitle: "Date") {
+                            focus = false
+                        }
                     }
-                    Spacer().frame(height: 14)
-                    FormInputRow(text: $viewModel.name, inputTitle: "Name")
-                        .focused($focus)
-                    FormInputCurrencyRow(inputTitle: "$0.00", amount: $viewModel.cost, isActive: $focus)
-                        .focused($focus)
-                    FormInputDateRow(date: $viewModel.date, inputTitle: "Date") {
-                        focus = false
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("Done") {
+                                focus = false
+                            }
+                        }
                     }
                 }
                 .padding()
