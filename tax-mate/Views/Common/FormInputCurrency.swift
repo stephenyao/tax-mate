@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FormInputCurrencyRow: View {
+struct FormInputCurrency: View {
     @Binding var amount: Double?
     let inputTitle: String
     
@@ -25,7 +25,7 @@ private struct Preview: View {
     @FocusState private var isActive: Bool
     
     var body: some View {
-        FormInputCurrencyRow(amount: $amount, inputTitle: "$0.00")
+        FormInputCurrency(amount: $amount, inputTitle: "$0.00")
             .focused($isActive)
     }
 }

@@ -12,6 +12,7 @@ struct AddDeductionsView: View {
     @State private var date: Date = .now.startOfDay()
     @State private var image: UIImage?
     @State private var money: Double?
+    @State private var presentDatePicker = false
     @FocusState private var focus: Bool
     private let repository = DeductionsRepository()
     @StateObject private var viewModel = AddDeductionsViewModel()
@@ -23,23 +24,31 @@ struct AddDeductionsView: View {
             ZStack(alignment: .bottom) {
                 ScrollView {
                     Group {
-                        ImagePickerButton(image: $viewModel.image) {
-                            focus = false
-                        }
+                        ImagePickerButton(image: $viewModel.image)
                         Spacer().frame(height: 14)
-                        FormInputRow(text: $viewModel.name, inputTitle: "Name")
+                        FormInputText(text: $viewModel.name, inputTitle: "Name")
                             .focused($focus)
-                        FormInputCurrencyRow(amount: $viewModel.cost, inputTitle: "$0.00")
+                        FormInputCurrency(amount: $viewModel.cost, inputTitle: "$0.00")
                             .focused($focus)
-                        FormInputDateRow(date: $viewModel.date, inputTitle: "Date") {
+                        FormInputDate(date: $viewModel.date, inputTitle: "Date", presentPicker: $presentDatePicker)
+                    }
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
                             focus = false
                         }
-                    }
+                    )
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
                             Spacer()
                             Button("Done") {
                                 focus = false
+                            }
+                        }
+                    }
+                    .onChange(of: focus) { newValue in
+                        if newValue == true {
+                            withAnimation {
+                                presentDatePicker = false
                             }
                         }
                     }

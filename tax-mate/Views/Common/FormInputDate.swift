@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct FormInputDateRow: View {
+struct FormInputDate: View {
     @Binding var date: Date
     let inputTitle: String
     var action: (() -> Void)?
-    @State private var presentPicker = false        
+    @Binding var presentPicker: Bool
     
     private var displayText: String {
         Formatter.sharedInstance.mediumDate.string(from: date)
@@ -45,9 +45,10 @@ struct FormInputDateRow: View {
 
 private struct FormInputDateRowPreview: View {
     @State var date: Date = .now
+    @State var presents = false
     
     var body: some View {
-        FormInputDateRow(date: $date, inputTitle: "Date")
+        FormInputDate(date: $date, inputTitle: "Date", presentPicker: $presents)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FormInputRow: View {
+struct FormInputText: View {
     @Binding var text: String
     let inputTitle: String
     
@@ -21,7 +21,7 @@ struct FormInputRow: View {
 
 struct FormInput_Previews: PreviewProvider {
     static var previews: some View {
-        FormInputRow(text: .constant("D1"), inputTitle: "Name")
+        FormInputText(text: .constant("D1"), inputTitle: "Name")
             .padding()
     }
 }
