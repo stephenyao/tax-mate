@@ -15,7 +15,7 @@ struct FormInputText: View {
         TextField(inputTitle, text: $text)
             .padding()
             .multilineTextAlignment(.leading)
-            .background(RoundedRectangle(cornerRadius: 12).foregroundColor(Color(uiColor: .systemGray6)))
+            .background(RoundedRectangle(cornerRadius: 12).foregroundColor(Color(uiColor: .systemGray5)))
     }
 }
 

@@ -24,10 +24,7 @@ struct FormInputDate: View {
                     .padding()
                 Spacer()
             }
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .foregroundColor(Color(uiColor: .systemGray6))
-            )
+            .background(RoundedRectangle(cornerRadius: 12).foregroundColor(Color(uiColor: .systemGray5)))
             .onTapGesture {
                 withAnimation {
                     action?()

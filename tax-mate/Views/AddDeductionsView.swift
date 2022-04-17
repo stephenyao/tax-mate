@@ -72,7 +72,7 @@ struct AddDeductionsView: View {
                     }
                 }
                 .padding()
-                .background(.black)
+                .background(Color(uiColor: .systemBackground))
             }
             .navigationTitle("New Deduction")
             .navigationBarTitleDisplayMode(.inline)

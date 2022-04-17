@@ -16,7 +16,7 @@ struct FormInputCurrency: View {
             .keyboardType(.decimalPad)
             .padding()
             .multilineTextAlignment(.leading)
-            .background(RoundedRectangle(cornerRadius: 12).foregroundColor(Color(uiColor: .systemGray6)))
+            .background(RoundedRectangle(cornerRadius: 12).foregroundColor(Color(uiColor: .systemGray5)))
     }
 }
 
