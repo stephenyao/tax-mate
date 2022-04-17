@@ -77,6 +77,7 @@
 		DD4D1735280929F5007B2D76 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DD4D1737280A49DD007B2D76 /* FormInputCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputCurrency.swift; sourceTree = "<group>"; };
 		DD4EEF2E280AF58300D16B54 /* AddDeductionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeductionsViewModel.swift; sourceTree = "<group>"; };
+		DD4EEF30280C302200D16B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DD55C15427F4595B003D05EE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DD55C15627F46401003D05EE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DD6847FF2802897500D7211B /* DateFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterData.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		DDBC5EBB27BD276200FAD85F /* tax-mate */ = {
 			isa = PBXGroup;
 			children = (
+				DD4EEF30280C302200D16B54 /* Info.plist */,
 				DDF6A48927C252D80012131B /* Helper */,
 				DDBC5EFF27BE4D5B00FAD85F /* Database */,
 				DDBC5EFE27BE4D4F00FAD85F /* Views */,
@@ -602,6 +604,8 @@
 				DEVELOPMENT_TEAM = XTHK4B78Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tax-mate/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used to take photos of deduction receipts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -631,6 +635,8 @@
 				DEVELOPMENT_TEAM = XTHK4B78Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tax-mate/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used to take photos of deduction receipts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
