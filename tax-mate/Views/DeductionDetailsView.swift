@@ -13,7 +13,7 @@ struct DeductionDetailsView: View {
     @State var presentDeleteAlert = false
     
     var body: some View {
-        VStack() {
+        ScrollView {
             if let image = deduction.image {
                 Image(uiImage: image)
                     .resizable()
@@ -21,19 +21,34 @@ struct DeductionDetailsView: View {
                     .frame(maxHeight: 250)
             }
             
-            VStack {
-                Text("Name")
-                Text(deduction.name)
-                    .fontWeight(.semibold)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Name")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.theme)
+                    Spacer().frame(height: 4)
+                    Text(deduction.name)
+                }
+                Spacer()
             }
             
-            VStack {
-                Text("Cost")
-                Text("\(deduction.cost)")
+            Spacer().frame(height: 22)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Cost")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.theme)
+                    Spacer().frame(height: 4)
+                    Text("\(deduction.cost)")
+                }
+                Spacer()
             }
-            Spacer()
         }
-
+        .padding()
+        
         .navigationBarItems(trailing: MoreActionsButton {
             Button("Delete deduction", role: .destructive) {
                 presentDeleteAlert = true
