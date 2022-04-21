@@ -226,11 +226,10 @@
 		DDBC5EFE27BE4D4F00FAD85F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDF6A47A27C1C2710012131B /* Deductions */,
 				DDBC5F0527BE57D400FAD85F /* Common */,
-				DDBC5F0827BE582100FAD85F /* AddDeductionsView.swift */,
-				DD4EEF2E280AF58300D16B54 /* AddDeductionsViewModel.swift */,
-				DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */,
+				DDF784E72810E9F700C144A6 /* AddDeduction */,
+				DDF784E62810E9EF00C144A6 /* DeductionDetails */,
+				DDF6A47A27C1C2710012131B /* Deductions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +298,23 @@
 				DD4D1735280929F5007B2D76 /* Date.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		DDF784E62810E9EF00C144A6 /* DeductionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5F1227C10FB200FAD85F /* DeductionDetailsView.swift */,
+			);
+			path = DeductionDetails;
+			sourceTree = "<group>";
+		};
+		DDF784E72810E9F700C144A6 /* AddDeduction */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC5F0827BE582100FAD85F /* AddDeductionsView.swift */,
+				DD4EEF2E280AF58300D16B54 /* AddDeductionsViewModel.swift */,
+			);
+			path = AddDeduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
