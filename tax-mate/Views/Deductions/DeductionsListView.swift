@@ -63,21 +63,3 @@ struct DeductionsListView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-
-
-private struct DummyDeductionsListView: View {
-    @Namespace var namespace
-    @State private var filter = DateFilterData(selectedOption: .all)
-    @State private var searching = false
-    
-    var body: some View {
-        DeductionsListView(isSearching: $searching, namespace: namespace)
-    }
-}
-
-struct Previews_DeductionsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        DummyDeductionsListView().preferredColorScheme(.light)
-        DummyDeductionsListView().preferredColorScheme(.dark)
-    }
-}

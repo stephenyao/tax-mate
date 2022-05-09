@@ -57,6 +57,7 @@
 		DDF6A48027C1F24E0012131B /* DBObserverSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */; };
 		DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */; };
 		DDF6A48B27C252E30012131B /* Assign.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48A27C252E30012131B /* Assign.swift */; };
+		DDF784EA2810EA3000C144A6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF784E92810EA3000C144A6 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		DDF6A47F27C1F24E0012131B /* DBObserverSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserverSpec.swift; sourceTree = "<group>"; };
 		DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsTestHelper.swift; sourceTree = "<group>"; };
 		DDF6A48A27C252E30012131B /* Assign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assign.swift; sourceTree = "<group>"; };
+		DDF784E92810EA3000C144A6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		DDBC5EFE27BE4D4F00FAD85F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DDF784E82810EA1700C144A6 /* Dashboard */,
 				DDBC5F0527BE57D400FAD85F /* Common */,
 				DDF784E72810E9F700C144A6 /* AddDeduction */,
 				DDF784E62810E9EF00C144A6 /* DeductionDetails */,
@@ -315,6 +318,14 @@
 				DD4EEF2E280AF58300D16B54 /* AddDeductionsViewModel.swift */,
 			);
 			path = AddDeduction;
+			sourceTree = "<group>";
+		};
+		DDF784E82810EA1700C144A6 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDF784E92810EA3000C144A6 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +461,7 @@
 				DDBC5F0D27BFAAC300FAD85F /* ImagePicker.swift in Sources */,
 				DD4D172E280796F4007B2D76 /* CloseButton.swift in Sources */,
 				DDF6A47E27C1EDEF0012131B /* DeductionsDBObserver.swift in Sources */,
+				DDF784EA2810EA3000C144A6 /* DashboardView.swift in Sources */,
 				DDF6A48B27C252E30012131B /* Assign.swift in Sources */,
 				DD4EEF2F280AF58300D16B54 /* AddDeductionsViewModel.swift in Sources */,
 				DD4D173028085673007B2D76 /* FormInputText.swift in Sources */,

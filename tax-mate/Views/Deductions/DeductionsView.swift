@@ -21,9 +21,3 @@ struct DeductionsView: View {
         }
     }
 }
-
-struct DeductionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeductionsView()
-    }
-}
