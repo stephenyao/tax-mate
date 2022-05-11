@@ -7,7 +7,18 @@
 
 import SwiftUI
 
+struct HeightPreference: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
 struct DashboardView: View {
+    @State private var contentHeight: CGFloat = 0
+    private let headerHeight: CGFloat = 200
+    
     private func computedOffset(_ proxy: GeometryProxy) -> CGFloat {
         proxy.frame(in: .global).origin.y
     }
@@ -25,30 +36,41 @@ struct DashboardView: View {
     }
     
     var body: some View {
-        GeometryReader { proxy in
-            ScrollView {
+        ScrollView {
+            Group {
                 RecentDeductions()
-                    .offset(y: 200)
+                    .offset(y: headerHeight)
                 GeometryReader { reader in
                     let offsetY = computedOffset(reader)
-                    
+
                     Color.theme
                         .frame(height: computedHeight(reader))
                         .offset(y: -offsetY)
-                    
+
                     DashboardHeader()
                         .offset(y: -offsetY + computedHeight(reader) - 170)
-                    
+
                     Group {
                         Text("off: \(offsetY)")
                             .frame(width: 100, height: 50)
                             .offset(x: 30, y: 30)
-                        Text("h: \(computedHeight(reader))")
+                        Text("h: \(reader.frame(in: .global).size.height)")
                             .frame(width: 100, height: 50)
                             .offset(x: 30, y: 80)
                     }.offset(y: -offsetY)
                 }
-                .frame(height: 200)
+                .frame(height: headerHeight)
+            }
+            .background(
+                GeometryReader { proxy in
+                    Text("\(proxy.size.height)")
+                        .offset(y: 300)
+                        .preference(key: HeightPreference.self, value: proxy.size.height)
+                }
+                .background(Color.blue)
+            )
+            .onPreferenceChange(HeightPreference.self) { value in
+                self.contentHeight = value
             }
         }
         .ignoresSafeArea()
@@ -64,7 +86,6 @@ struct RecentDeductions: View {
                     .frame(height: 100)
             }
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
