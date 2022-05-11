@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var contentHeight: CGFloat = 0
-    private let headerHeight: CGFloat = 200
+    private let headerHeight: CGFloat = 250
     
     private func computedOffset(_ proxy: GeometryProxy) -> CGFloat {
         proxy.frame(in: .global).origin.y
@@ -40,7 +40,8 @@ struct DashboardView: View {
                                 ZStack(alignment: .bottom) {
                                     Color.clear
                                     DashboardHeader()
-                                }                                    
+                                        .padding([.bottom])
+                                }
                             )
                             .frame(height: computedHeight(reader))
                             .offset(y: -offsetY)
