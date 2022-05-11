@@ -36,10 +36,14 @@ struct DashboardView: View {
                     GeometryReader { reader in
                         let offsetY = computedOffset(reader)
                         Color.themeBackground
+                            .overlay(
+                                ZStack(alignment: .bottom) {
+                                    Color.clear
+                                    DashboardHeader()
+                                }                                    
+                            )
                             .frame(height: computedHeight(reader))
                             .offset(y: -offsetY)
-                        DashboardHeader()
-                            .offset(y: -offsetY + computedHeight(reader) - 170)
                     }
                     .frame(height: headerHeight)
                 }

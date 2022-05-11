@@ -19,6 +19,6 @@ struct DashboardHeader: View {
             }
             .padding()
             .frame(height: 170)
-        }        
+        }
     }
 }
