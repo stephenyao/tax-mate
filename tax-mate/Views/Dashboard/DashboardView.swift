@@ -26,7 +26,7 @@ struct DashboardView: View {
     private func computedHeight(_ proxy: GeometryProxy) -> CGFloat {
         let offsetY = proxy.frame(in: .global).origin.y
         let size: CGFloat = contentHeight
-        let diff = offsetY - size
+        let diff = headerHeight + offsetY - size
         
         if diff > 0 {
             return proxy.size.height + diff
@@ -57,6 +57,7 @@ struct DashboardView: View {
                 }
             )
             .onPreferenceChange(HeightPreference.self) { value in
+                print(value)
                 self.contentHeight = value
             }
         }
@@ -74,7 +75,7 @@ struct RecentDeductions: View {
             }
             .padding()
             
-            ForEach(1...13, id:\.self) { i in
+            ForEach(1...10, id:\.self) { i in
                 Text(String(describing: i))
                     .frame(height: 100)
             }
