@@ -35,7 +35,7 @@ struct DashboardView: View {
                         .offset(y: headerHeight)
                     GeometryReader { reader in
                         let offsetY = computedOffset(reader)
-                        Color.theme
+                        Color.themeBackground
                             .frame(height: computedHeight(reader))
                             .offset(y: -offsetY)
                         DashboardHeader()
