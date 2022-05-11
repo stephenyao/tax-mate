@@ -14,16 +14,21 @@ struct DashboardView: View {
     
     private func computedHeight(_ proxy: GeometryProxy) -> CGFloat {
         let offsetY = proxy.frame(in: .global).origin.y
-        if offsetY > 0 {
-            return proxy.size.height + offsetY
+        let size: CGFloat = 1188
+        let diff = offsetY - size
+        
+        if diff > 0 {
+            return proxy.size.height + diff
         } else {
             return proxy.size.height
         }
     }
-
+    
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
+        GeometryReader { proxy in
+            ScrollView {
+                RecentDeductions()
+                    .offset(y: 200)
                 GeometryReader { reader in
                     let offsetY = computedOffset(reader)
                     
@@ -33,9 +38,17 @@ struct DashboardView: View {
                     
                     DashboardHeader()
                         .offset(y: -offsetY + computedHeight(reader) - 170)
+                    
+                    Group {
+                        Text("off: \(offsetY)")
+                            .frame(width: 100, height: 50)
+                            .offset(x: 30, y: 30)
+                        Text("h: \(computedHeight(reader))")
+                            .frame(width: 100, height: 50)
+                            .offset(x: 30, y: 80)
+                    }.offset(y: -offsetY)
                 }
                 .frame(height: 200)
-                RecentDeductions()
             }
         }
         .ignoresSafeArea()
