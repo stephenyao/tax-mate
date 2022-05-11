@@ -36,32 +36,35 @@ struct DashboardView: View {
     }
     
     var body: some View {
-        ScrollView {
-            Group {
-                RecentDeductions()
-                    .offset(y: headerHeight)
-                GeometryReader { reader in
-                    let offsetY = computedOffset(reader)
-                    Color.theme
-                        .frame(height: computedHeight(reader))
-                        .offset(y: -offsetY)
-                    DashboardHeader()
-                        .offset(y: -offsetY + computedHeight(reader) - 170)
+        NavigationView {
+            ScrollView(showsIndicators: false) {
+                Group {
+                    RecentDeductions()
+                        .offset(y: headerHeight)
+                    GeometryReader { reader in
+                        let offsetY = computedOffset(reader)
+                        Color.theme
+                            .frame(height: computedHeight(reader))
+                            .offset(y: -offsetY)
+                        DashboardHeader()
+                            .offset(y: -offsetY + computedHeight(reader) - 170)
+                    }
+                    .frame(height: headerHeight)
                 }
-                .frame(height: headerHeight)
-            }
-            .overlay(
-                GeometryReader { proxy in
-                    Color.clear
-                        .preference(key: HeightPreference.self, value: proxy.size.height)
+                .overlay(
+                    GeometryReader { proxy in
+                        Color.clear
+                            .preference(key: HeightPreference.self, value: proxy.size.height)
+                    }
+                )
+                .onPreferenceChange(HeightPreference.self) { value in
+                    self.contentHeight = value
                 }
-            )
-            .onPreferenceChange(HeightPreference.self) { value in
-                print(value)
-                self.contentHeight = value
             }
+            .ignoresSafeArea()
+            .navigationBarHidden(true)
         }
-        .ignoresSafeArea()
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -72,6 +75,7 @@ struct RecentDeductions: View {
                 Text("Recent deductions")
                     .font(.headline)
                 Spacer()
+                NavigationLink("See all", destination: DeductionsView())
             }
             .padding()
             
@@ -86,7 +90,7 @@ struct RecentDeductions: View {
 
 struct DashboardHeader: View {
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 15) {
                 ForEach(1...6, id:\.self) { _ in
                     RoundedRectangle(cornerRadius: 15)

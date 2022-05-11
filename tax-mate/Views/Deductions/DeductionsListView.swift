@@ -45,21 +45,18 @@ struct DeductionsListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                searchBar
-                filters
-                rows                
-                if viewModel.hasNext() {
-                    nextLoading
-                }
+        List {
+            searchBar
+            filters
+            rows
+            if viewModel.hasNext() {
+                nextLoading
             }
-            .listStyle(.plain)
-            .navigationTitle("Deductions")
-            .navigationBarItems(trailing: PresentModalButton(showNewItem: $showsAddDeductions) {
-                AddDeductionsView(showsModal: $showsAddDeductions)
-            })
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .listStyle(.plain)
+        .navigationBarTitle(Text("All Deductions"), displayMode: .inline)
+        .navigationBarItems(trailing: PresentModalButton(showNewItem: $showsAddDeductions) {
+            AddDeductionsView(showsModal: $showsAddDeductions)
+        })        
     }
 }

@@ -18,7 +18,7 @@ struct SearchDeductionsView: View {
     @State private var selectedDeduction: Deduction?
     
     var body: some View {
-        VStack {
+        List {
             HStack {
                 SearchBar(query: $viewModel.searchQuery, isActive: $isSearching)
                     .matchedGeometryEffect(id: "searchbar", in: namespace)
@@ -32,21 +32,23 @@ struct SearchDeductionsView: View {
                     }
                 } label: {
                     Text("cancel")
+                        .foregroundColor(.accentColor)
                 }
                 .offset(x: buttonOffset)
             }
-            .padding()
-            List {
-                ForEach(viewModel.searchResults) { deduction in
-                    Text(deduction.name)
-                        .onTapGesture {
-                            self.selectedDeduction = deduction
-                        }
-                }
+            .buttonStyle(PlainButtonStyle())
+            .listRowSeparator(.hidden)
+            
+            ForEach(viewModel.searchResults) { deduction in
+                Text(deduction.name)
+                    .onTapGesture {
+                        self.selectedDeduction = deduction
+                    }
             }
-            .listStyle(.plain)
         }
-        .navigationTitle("test")
+        .listStyle(.plain)
+        //        }
+        .navigationBarTitle(Text("Search"), displayMode: .inline)
         .onAppear {
             withAnimation {
                 self.buttonOffset = 0
