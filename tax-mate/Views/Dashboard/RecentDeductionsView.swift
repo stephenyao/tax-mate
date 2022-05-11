@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Fakery
 
 struct RecentDeductions: View {
     var body: some View {
@@ -16,13 +17,27 @@ struct RecentDeductions: View {
                 Spacer()
                 NavigationLink("See all", destination: DeductionsView())
             }
-            .padding()
+            .padding([.top, .leading, .trailing])
             
-            ForEach(1...10, id:\.self) { i in
-                Text(String(describing: i))
-                    .frame(height: 100)
+            Divider()
+            
+            ForEach(1...20, id:\.self) { i in
+                HStack {
+                    Text(Faker().company.name())
+                    Spacer()
+                    Text(Formatter.sharedInstance.currency.string(from: NSNumber(value: Faker().number.randomDouble(min: 1, max: 500)))!)
+                }
+                .padding([.leading, .trailing])
+                Divider()
             }
         }
         .frame(maxWidth: .infinity)
+    }
+}
+
+struct RecentDeductionsView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecentDeductions()
+        RecentDeductions().preferredColorScheme(.dark)
     }
 }

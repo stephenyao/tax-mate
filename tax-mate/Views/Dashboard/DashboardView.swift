@@ -58,7 +58,7 @@ struct DashboardView: View {
                     self.contentHeight = value
                 }
             }
-            .ignoresSafeArea()
+            .ignoresSafeArea(.all, edges: [.top])   
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
