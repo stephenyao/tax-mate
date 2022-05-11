@@ -25,7 +25,7 @@ struct DashboardView: View {
     
     private func computedHeight(_ proxy: GeometryProxy) -> CGFloat {
         let offsetY = proxy.frame(in: .global).origin.y
-        let size: CGFloat = 1188
+        let size: CGFloat = contentHeight
         let diff = offsetY - size
         
         if diff > 0 {
@@ -42,32 +42,19 @@ struct DashboardView: View {
                     .offset(y: headerHeight)
                 GeometryReader { reader in
                     let offsetY = computedOffset(reader)
-
                     Color.theme
                         .frame(height: computedHeight(reader))
                         .offset(y: -offsetY)
-
                     DashboardHeader()
                         .offset(y: -offsetY + computedHeight(reader) - 170)
-
-                    Group {
-                        Text("off: \(offsetY)")
-                            .frame(width: 100, height: 50)
-                            .offset(x: 30, y: 30)
-                        Text("h: \(reader.frame(in: .global).size.height)")
-                            .frame(width: 100, height: 50)
-                            .offset(x: 30, y: 80)
-                    }.offset(y: -offsetY)
                 }
                 .frame(height: headerHeight)
             }
-            .background(
+            .overlay(
                 GeometryReader { proxy in
-                    Text("\(proxy.size.height)")
-                        .offset(y: 300)
+                    Color.clear
                         .preference(key: HeightPreference.self, value: proxy.size.height)
                 }
-                .background(Color.blue)
             )
             .onPreferenceChange(HeightPreference.self) { value in
                 self.contentHeight = value
@@ -80,12 +67,19 @@ struct DashboardView: View {
 struct RecentDeductions: View {
     var body: some View {
         VStack(spacing: 20) {
-            ForEach(1...10, id:\.self) { i in
+            HStack {
+                Text("Recent deductions")
+                    .font(.headline)
+                Spacer()
+            }
+            .padding()
+            
+            ForEach(1...13, id:\.self) { i in
                 Text(String(describing: i))
-                    .background(.red)
                     .frame(height: 100)
             }
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
