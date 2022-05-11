@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct HeightPreference: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
 struct DashboardView: View {
     @State private var contentHeight: CGFloat = 0
     private let headerHeight: CGFloat = 200
@@ -65,43 +57,6 @@ struct DashboardView: View {
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct RecentDeductions: View {
-    var body: some View {
-        VStack(spacing: 20) {
-            HStack {
-                Text("Recent deductions")
-                    .font(.headline)
-                Spacer()
-                NavigationLink("See all", destination: DeductionsView())
-            }
-            .padding()
-            
-            ForEach(1...10, id:\.self) { i in
-                Text(String(describing: i))
-                    .frame(height: 100)
-            }
-        }
-        .frame(maxWidth: .infinity)
-    }
-}
-
-struct DashboardHeader: View {
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 15) {
-                ForEach(1...6, id:\.self) { _ in
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(Color.formBackground)
-                        .frame(width: 120, height: 120)
-                }
-            }
-            .padding()
-            .frame(height: 170)
-        }
-        
     }
 }
 

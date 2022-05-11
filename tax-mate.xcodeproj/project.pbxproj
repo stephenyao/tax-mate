@@ -58,6 +58,9 @@
 		DDF6A48427C2477E0012131B /* DeductionsTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */; };
 		DDF6A48B27C252E30012131B /* Assign.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF6A48A27C252E30012131B /* Assign.swift */; };
 		DDF784EA2810EA3000C144A6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF784E92810EA3000C144A6 /* DashboardView.swift */; };
+		DDF784EC282BED4C00C144A6 /* RecentDeductionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF784EB282BED4C00C144A6 /* RecentDeductionsView.swift */; };
+		DDF784EE282BED6900C144A6 /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF784ED282BED6900C144A6 /* DashboardHeaderView.swift */; };
+		DDF784F0282BED9A00C144A6 /* HeightPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF784EF282BED9A00C144A6 /* HeightPreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		DDF6A48327C2477E0012131B /* DeductionsTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeductionsTestHelper.swift; sourceTree = "<group>"; };
 		DDF6A48A27C252E30012131B /* Assign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assign.swift; sourceTree = "<group>"; };
 		DDF784E92810EA3000C144A6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		DDF784EB282BED4C00C144A6 /* RecentDeductionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDeductionsView.swift; sourceTree = "<group>"; };
+		DDF784ED282BED6900C144A6 /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
+		DDF784EF282BED9A00C144A6 /* HeightPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightPreference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,7 @@
 				DD4D172F28085673007B2D76 /* FormInputText.swift */,
 				DD4D17312808F3C3007B2D76 /* FormInputDate.swift */,
 				DD4D1737280A49DD007B2D76 /* FormInputCurrency.swift */,
+				DDF784EF282BED9A00C144A6 /* HeightPreference.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -324,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				DDF784E92810EA3000C144A6 /* DashboardView.swift */,
+				DDF784EB282BED4C00C144A6 /* RecentDeductionsView.swift */,
+				DDF784ED282BED6900C144A6 /* DashboardHeaderView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -448,9 +457,11 @@
 				DD55C15527F4595B003D05EE /* Colors.swift in Sources */,
 				DDA7FBE6280055CA00A85ABB /* BottomSheet.swift in Sources */,
 				DDF2202F27FB26A20065C794 /* DateFilterView.swift in Sources */,
+				DDF784EE282BED6900C144A6 /* DashboardHeaderView.swift in Sources */,
 				DDBC5EC927BD276300FAD85F /* tax_mate.xcdatamodeld in Sources */,
 				DDBC5EFD27BDDB4300FAD85F /* Deduction.swift in Sources */,
 				DDBC5F0B27BFAA4800FAD85F /* UIImage+Utils.swift in Sources */,
+				DDF784EC282BED4C00C144A6 /* RecentDeductionsView.swift in Sources */,
 				DDBC5EC627BD276300FAD85F /* Persistence.swift in Sources */,
 				DDBC5EBF27BD276200FAD85F /* DeductionsView.swift in Sources */,
 				DDF2203227FC506C0065C794 /* FilterSummary.swift in Sources */,
@@ -475,6 +486,7 @@
 				DDF2202427F478EB0065C794 /* DeductionsListView.swift in Sources */,
 				DDBC5EFA27BDD9FD00FAD85F /* DeductionsRepository.swift in Sources */,
 				DDBC5F1327C10FB200FAD85F /* DeductionDetailsView.swift in Sources */,
+				DDF784F0282BED9A00C144A6 /* HeightPreference.swift in Sources */,
 				DDF6A47C27C1C2880012131B /* DeductionsViewModel.swift in Sources */,
 				DD4D173428092102007B2D76 /* Formatter.swift in Sources */,
 				DD4D1736280929F5007B2D76 /* Date.swift in Sources */,
